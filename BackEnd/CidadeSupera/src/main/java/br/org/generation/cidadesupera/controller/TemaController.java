@@ -28,17 +28,21 @@ public class TemaController {
 	@Autowired
 	private TemaRepository temaRepository;
 	
+	//Busca todos os temas 
 	@GetMapping
 	public ResponseEntity<List<Tema>> getAll(){
 		return ResponseEntity.ok(temaRepository.findAll());
 	}
 	
+	//Busca temas por id
 	@GetMapping("/{id}")
 	public ResponseEntity<Tema> getById(@PathVariable long id){
 		return temaRepository.findById(id)
 				.map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
 	}
+	
+	//Busca por categoria 
 	@GetMapping("/categoria/{categoria}")
 	public ResponseEntity<List<Tema>> getByTitle(@PathVariable String categoria){
 		return ResponseEntity.ok(temaRepository.findByCategoriaContainingIgnoreCase(categoria));

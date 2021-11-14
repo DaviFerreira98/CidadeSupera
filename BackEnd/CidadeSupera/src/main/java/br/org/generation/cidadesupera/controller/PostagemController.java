@@ -28,11 +28,13 @@ public class PostagemController {
 	@Autowired
 	private PostagemRepository postagemRepository;
 	
+	//Busca todas as postagens 
 	@GetMapping
 	public ResponseEntity<List<Postagem>> getAll(){ 
 		return ResponseEntity.ok(postagemRepository.findAll());
 	}
 	
+	//Busca postagens por id
 	@GetMapping("/{id}")
 	public ResponseEntity<Postagem> getById(@PathVariable long id){
 		return postagemRepository.findById(id)
@@ -44,6 +46,12 @@ public class PostagemController {
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<Postagem>> getByTitulo(@PathVariable String titulo){
 		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
+	}
+	
+	//Busca por texto
+	@GetMapping("/texto/{texto}")
+	public ResponseEntity<List<Postagem>> getByTexto(@PathVariable String texto) {
+		return ResponseEntity.ok(postagemRepository.findAllByTextoContainingIgnoreCase(texto));
 	}
 	
 	@PostMapping 

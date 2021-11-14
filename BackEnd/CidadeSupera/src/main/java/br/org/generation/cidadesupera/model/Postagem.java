@@ -28,7 +28,7 @@ public class Postagem {
 	private String titulo;
 	
 	@NotNull (message = "Texto obrigatório.")
-	@Size (min = 4,max = 1000,message = "Por favor, digite a quantidade adequada de caracteres.")
+	@Size (min = 4,message = "Por favor, digite a quantidade adequada de caracteres.")
 	private String texto;
 	
 	@NotNull
