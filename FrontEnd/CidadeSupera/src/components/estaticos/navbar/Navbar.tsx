@@ -8,7 +8,7 @@ function Navbar() {
         <>
             <AppBar position="static" id="navegacao">
                 <Toolbar variant="dense" >
-                    <Box className='cursor'>
+                    <Box className='cursor' style={{flexGrow: 1}}>
                         <Link to='/home' className="text-decorator-none">
                         <Typography variant="h5" color="inherit" >
                             Cidade Supera
@@ -26,7 +26,7 @@ function Navbar() {
                         <Box mx={1} className='cursor'>
                             <Link to='/sobre' className="text-decorator-none">
                             <Typography variant="h6" color="inherit">
-                                Sobre Nós
+                                Sobre
                             </Typography>
                             </Link>
                         </Box>

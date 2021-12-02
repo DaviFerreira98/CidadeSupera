@@ -6,6 +6,7 @@ import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import Equipe from './paginas/equipe/Equipe';
 import Sobre from './paginas/sobre/Sobre';
+import SobreNos from './paginas/sobrenos/SobreNos';
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
       <Navbar />
         <Switch>
           <div style={{minHeight: '100vh'}}>
+
+            <Route exact path='/'>
+              <Home />
+            </Route>
 
             <Route path='/home'>
               <Home />
@@ -24,6 +29,10 @@ function App() {
 
             <Route path='/equipe'>
               <Equipe />
+            </Route>
+
+            <Route path='/sobrenos'>
+              <SobreNos />
             </Route>
 
           </div>

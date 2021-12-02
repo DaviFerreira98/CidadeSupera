@@ -1,0 +1,16 @@
+.texto {
+    color: #FF0064 !important;
+}
+
+.img-sobre{
+    width: 40vh;
+    min-height: 30vh;
+    border-radius: 50%;
+    position: center;
+}
+
+.titulo-sobre {
+    text-align: center !important;
+    color: black;
+    font-weight: bold !important;
+}

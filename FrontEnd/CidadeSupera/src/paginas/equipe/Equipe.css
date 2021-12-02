@@ -4,6 +4,12 @@
 
 .img-container{
     width: 40vh;
-    height: 40vh;
+    min-height: 30vh;
     border-radius: 50%;
+}
+
+.botao-equipe {
+    border-color: white !important;
+    background-color: #FF0064 !important;
+    color: white !important;
 }

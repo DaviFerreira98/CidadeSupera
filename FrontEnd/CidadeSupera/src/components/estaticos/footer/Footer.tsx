@@ -11,13 +11,15 @@ function Footer() {
         <>
             <Grid container id="Rodape">
                 <Grid item xs={4}>
-                    <Box padding={10}>
+                    <Box padding={7}>
                         <Box paddingBottom={2}>
                         <Typography variant="h5" align="left" style={{fontWeight:'bold'}}>Cidade Supera</Typography>
                         </Box>
-                        <Typography align="left">Nós somos uma rede Social e temos como objetivo
-                        conectar os problema das pessoas com as soluçoes</Typography>
+                        <Typography align="left" >Nós somos uma rede Social e temos como objetivo
+                        conectar os problemas das pessoas com as soluções</Typography>
+                        <Box paddingTop={2} >
                         <Typography variant="h6" align="left" style={{fontWeight:'bold'}}>Redes Sociais</Typography>
+                        </Box>
                         <Box paddingBottom={2}>
                         <a href="" target="_blank">
                                 <FacebookIcon style={{ fontSize: 40, color: "black" }} />
@@ -32,7 +34,7 @@ function Footer() {
                     </Box>
                 </Grid>
                 <Grid item xs={4}>
-                    <Box padding={10}>
+                    <Box padding={7}>
                     <Box paddingBottom={2}>
                         <Typography variant="h5" align="left" style={{fontWeight:'bold'}}>Empresa</Typography>
                     </Box>
@@ -48,9 +50,13 @@ function Footer() {
                     </Box>
                 </Grid>
                 <Grid item xs={4}>
-                    <Box padding={10}>
-                    <Typography variant="h5" align="left" style={{fontWeight:'bold'}}>Nos de seu FeedBack</Typography>
-                    <TextField id="Email" label="Email" variant="outlined" name="email"></TextField>
+                    <Box padding={7}>
+                        <Box paddingBottom={2}>
+                        <Typography variant="h5" align="left" style={{fontWeight:'bold'}}>Nos dê seu FeedBack</Typography>
+                        </Box>
+                        <Box paddingTop={1}>
+                        <TextField id="Email" label="Email" variant="outlined" name="email"></TextField>
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>
