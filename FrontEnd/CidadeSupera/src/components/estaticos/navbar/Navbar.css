@@ -1,0 +1,15 @@
+.text-decorator-none{
+    text-decoration: none;
+    color: white;
+}
+
+#navegacao{
+    background: #FF0064!important;
+}
+
+.alinhamento{
+    align-items: center;
+}
+.cursor{
+    cursor: pointer;
+}

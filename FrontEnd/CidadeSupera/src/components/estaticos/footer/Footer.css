@@ -1,0 +1,9 @@
+#Rodape {
+    background-color: #ff0064;
+    background-image: linear-gradient(0deg, #ff0064 0%, #fff 100%);
+}
+
+.text-decorator-none2{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,9 @@
+.texto {
+    color: #FF0064 !important;
+}
+
+.img-container{
+    width: 40vh;
+    height: 40vh;
+    border-radius: 50%;
+}

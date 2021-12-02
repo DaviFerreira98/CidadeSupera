@@ -1,0 +1,22 @@
+.home {
+    background-color: white;
+}
+
+.img-home {
+    border-radius: 5%;
+}
+
+.titulo {
+    color: #FF0064;
+}
+
+.botao {
+    border-color: white !important;
+    background-color: #FF0064 !important;
+    color: white !important;
+}
+
+.texto-home {
+    color: rgba(31, 25, 25, 0.815);
+    font-weight: bold !important;
+}
