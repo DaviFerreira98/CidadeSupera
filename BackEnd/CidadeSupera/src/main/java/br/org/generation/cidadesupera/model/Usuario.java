@@ -1,5 +1,6 @@
 package br.org.generation.cidadesupera.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -38,6 +41,10 @@ public class Usuario {
 	@NotNull(message = "Senha obrigatória")
 	@Size(min = 8)
 	private String senha;
+	
+	@NotNull(message = "Data de Nascimento Obrigatória")
+	@DateTimeFormat(pattern = "yyyy.MM.dd")
+	private LocalDate dataNascimento;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
@@ -73,6 +80,14 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public List<Postagem> getPostagem() {
