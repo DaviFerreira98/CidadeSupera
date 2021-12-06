@@ -1,0 +1,10 @@
+.img{
+    background-image:'../../assets/images/istockphoto-1219926690-170667a.jpg';
+    background-repeat:no-repeat;
+    width:100vh;
+    background-size:cover;
+    background-position:center;
+}
+.text-none{
+    text-decoration: none;
+}

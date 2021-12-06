@@ -1,8 +1,8 @@
-.background {
-    background-image: url("../../assets/images/istockphoto-1219926690-170667a.jpg");
+.background1 {
+    background-image: url("../../assets/images/buildings-fall-synthwave-ye-1920x1080.png");
     background-repeat: no-repeat;
     width: 100vh;
-    min-height: 130vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
 }
@@ -15,4 +15,7 @@
     border-color: white !important;
     background-color: #FF0064 !important;
     color: white !important;
+}
+.txt{
+    color: #FF0064 !important;
 }

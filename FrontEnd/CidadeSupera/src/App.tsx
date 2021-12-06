@@ -8,6 +8,8 @@ import Equipe from './paginas/equipe/Equipe';
 import Sobre from './paginas/sobre/Sobre';
 import SobreNos from './paginas/sobrenos/SobreNos';
 import Login from './paginas/login/Login';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import Feed from './paginas/feed/Feed';
 
 function App() {
   return (
@@ -40,6 +42,13 @@ function App() {
               <Login />
             </Route>
 
+            <Route path='/cadastroUsuario'>
+              <CadastroUsuario />
+            </Route>
+
+            <Route path='/feed'>
+              <Feed />
+            </Route>
           </div>
         </Switch>
       <Footer />
