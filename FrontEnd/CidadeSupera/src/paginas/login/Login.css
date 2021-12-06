@@ -1,0 +1,18 @@
+.background {
+    background-image: url("../../assets/images/istockphoto-1219926690-170667a.jpg");
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 130vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.card{
+    background: white;
+}
+
+.botao1 {
+    border-color: white !important;
+    background-color: #FF0064 !important;
+    color: white !important;
+}

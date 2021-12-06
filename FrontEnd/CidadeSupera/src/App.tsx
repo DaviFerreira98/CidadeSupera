@@ -7,6 +7,7 @@ import Footer from './components/estaticos/footer/Footer';
 import Equipe from './paginas/equipe/Equipe';
 import Sobre from './paginas/sobre/Sobre';
 import SobreNos from './paginas/sobrenos/SobreNos';
+import Login from './paginas/login/Login';
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
 
             <Route path='/sobrenos'>
               <SobreNos />
+            </Route>
+
+            <Route path='/login'>
+              <Login />
             </Route>
 
           </div>
