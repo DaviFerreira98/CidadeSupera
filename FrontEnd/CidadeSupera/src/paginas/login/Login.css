@@ -1,5 +1,5 @@
 .background1 {
-    background-image: url("../../assets/images/buildings-fall-synthwave-ye-1920x1080.png");
+    background-image: url("https://i.imgur.com/rG7ibgI.png");
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
@@ -16,6 +16,7 @@
     background-color: #FF0064 !important;
     color: white !important;
 }
+
 .txt{
     color: #FF0064 !important;
 }

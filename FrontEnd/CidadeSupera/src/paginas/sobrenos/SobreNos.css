@@ -1,5 +1,6 @@
 .texto {
-    color: #FF0064 !important;
+    color: #4578FF !important;
+    font-weight: bold;
 }
 
 .img-sobre{
@@ -11,6 +12,6 @@
 
 .titulo-sobre {
     text-align: center !important;
-    color: black;
+    color: #FF0064 !important;
     font-weight: bold !important;
 }

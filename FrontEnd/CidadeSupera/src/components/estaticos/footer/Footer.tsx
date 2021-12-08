@@ -13,9 +13,9 @@ function Footer() {
                 <Grid item xs={4}>
                     <Box padding={7}>
                         <Box paddingBottom={2}>
-                        <Typography variant="h5" align="left" style={{fontWeight:'bold'}}>Cidade Supera</Typography>
+                        <Typography variant="h5" align="left" className='txt-footer bold' >Cidade Supera</Typography>
                         </Box>
-                        <Typography align="left" >Nós somos uma rede Social e temos como objetivo
+                        <Typography align="left" className='txt-footer' >Nós somos uma rede Social e temos como objetivo
                         conectar os problemas das pessoas com as soluções</Typography>
                         <Box paddingTop={2} >
                         <Typography variant="h6" align="left" style={{fontWeight:'bold'}}>Redes Sociais</Typography>

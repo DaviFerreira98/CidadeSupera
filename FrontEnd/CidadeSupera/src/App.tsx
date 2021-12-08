@@ -49,6 +49,7 @@ function App() {
             <Route path='/feed'>
               <Feed />
             </Route>
+
           </div>
         </Switch>
       <Footer />

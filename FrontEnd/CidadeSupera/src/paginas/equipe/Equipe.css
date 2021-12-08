@@ -2,7 +2,7 @@
     color: #FF0064 !important;
 }
 
-.img-container{
+.img-container {
     width: 40vh;
     min-height: 30vh;
     border-radius: 50%;
@@ -12,4 +12,10 @@
     border-color: white !important;
     background-color: #FF0064 !important;
     color: white !important;
+}
+
+.cardMedia {
+    padding-top: '81.25%';
+    border-radius: '50%';
+    margin: '28px';
 }

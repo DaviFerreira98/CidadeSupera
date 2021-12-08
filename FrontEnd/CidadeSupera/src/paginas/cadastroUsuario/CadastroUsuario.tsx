@@ -1,4 +1,4 @@
-import React , {useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
@@ -8,7 +8,7 @@ import './CadastroUsuario.css';
 
 function CadastroUsuario() {
     let history = useHistory();
-    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(
         {
             id: 0,
@@ -32,7 +32,7 @@ function CadastroUsuario() {
     }, [userResult])
 
 
-    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
 
@@ -47,34 +47,52 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha === user.senha){
-        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
-        }else{
+        if (confirmarSenha === user.senha) {
+            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+            alert('Usuario cadastrado com sucesso')
+        } else {
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
     }
     return (
-        
         <Grid container direction="row" justifyContent="center" alignItems="center">
-        <Grid item xs={6} className="img"> </Grid>
-        <Grid item xs={6} alignItems="center"> 
-            <Box paddingX={10}>
-                <form>
-                    <Typography variant='h3'gutterBottom color='textPrimary' component='h3'align='center'>cadastrar</Typography>
-                    <TextField id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
-                    <TextField id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                    <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-                    <TextField id='confirmarSenha' label='confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
-                    <Box marginTop={2} textAlign='center'>
-                        <Link to='/login' className='text-none'>
-                        <Button variant='contained' color='secondary'>cancelar</Button>
-                        </Link>
-                        <Button type='submit' variant='contained' color='primary'>cadastrar</Button>
+            <Grid item xs={6} className="img" alignItems="center">
+                <img src="https://i.imgur.com/H4QDZL3.jpg" alt="" className="img" />
+            </Grid>
+            <Grid item xs={6} alignItems="center">
+                <Box paddingX={10}>
+                    <Box textAlign="center">
+                        <img src="https://i.imgur.com/MIYkCjy.png" alt="logo Cidade Supera" />
                     </Box>
-                </form>
-            </Box>
-        </Grid>
+                    <Box marginTop={4} textAlign='center'>
+                        <form >
+                            <Typography variant='h5' gutterBottom color='textPrimary' component='h3' align='left'>Informações básicas</Typography>
+                            <TextField id='nome' label='Nome' variant='standard' name='nome' margin='normal' fullWidth />
+                            <TextField id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
+                            <TextField id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                            <TextField id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
+                            <Box display='flex' justifyContent='center' marginTop={2} textAlign='center'>
+                                <Link to='/login' className='text-decorator-none'>
+                                    <Button variant='contained' className='btnCancelar'>
+                                        Cancelar
+                                    </Button>
+                                </Link>
+                                <Button type='submit' variant='contained' className='botao1'>
+                                        Cadastrar
+                                </Button>
+                            </Box>
+                        </form>
+                        <Box display='flex' justifyContent='center' marginTop={2}>
+                                <Box marginRight={1}>
+                                    <Typography variant='subtitle1' gutterBottom align='center'>Já possui uma conta?</Typography>
+                                </Box>
+                                <Link to='/login' className='text-decorator-none'>
+                                    <Typography variant="subtitle1" gutterBottom align='center' className='txt' >Logue-se</Typography>
+                                </Link>
+                            </Box>
+                    </Box>
+                </Box>
+            </Grid>
         </Grid>
     )
 }

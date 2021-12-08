@@ -1,10 +1,22 @@
 .img{
-    background-image:'../../assets/images/istockphoto-1219926690-170667a.jpg';
-    background-repeat:no-repeat;
-    width:100vh;
-    background-size:cover;
-    background-position:center;
+    position: cover;
+    width: 110vh;
+    height: 100vh;
 }
 .text-none{
     text-decoration: none;
+}
+
+.botao1 {
+    border-color: white !important;
+    background-color: #FF0064 !important;
+    color: white !important;
+    margin-left: 4px !important;
+}
+
+.btnCancelar {
+    border-color: white !important;
+    background-color: #4578FF !important;
+    color: white !important;
+    margin-right: 4px !important;
 }

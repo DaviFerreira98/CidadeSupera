@@ -13,3 +13,5 @@ export const api = axios.create({
         const resposta = await api.post(url, dados)
         setDado(resposta.data.token)
     }
+
+    
