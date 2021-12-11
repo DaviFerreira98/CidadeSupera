@@ -10,6 +10,7 @@ import SobreNos from './paginas/sobrenos/SobreNos';
 import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Feed from './paginas/feed/Feed';
+import SideBar from './components/estaticos/sideBar/SideBar';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             </Route>
 
             <Route path='/feed'>
+              
               <Feed />
             </Route>
 

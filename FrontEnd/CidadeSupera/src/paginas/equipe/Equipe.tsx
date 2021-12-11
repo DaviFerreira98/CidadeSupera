@@ -1,6 +1,6 @@
 import React from 'react'
 import './Equipe.css';
-import { Grid, Box, Button} from '@material-ui/core';
+import { Grid, Box, Button, Container} from '@material-ui/core';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 function Equipe() {
     return (
+
         <Grid container direction="row" justifyContent="center" alignItems="center">
             <Grid item xs={12} justifyContent="center" >
                 <Box display='center' paddingTop={2}>

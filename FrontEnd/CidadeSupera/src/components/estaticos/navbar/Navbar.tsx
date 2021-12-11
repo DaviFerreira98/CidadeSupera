@@ -1,8 +1,27 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Box,} from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Box, Container,} from '@material-ui/core';
 import { Link,  useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
 import './Navbar.css';
+
+interface Props{
+    window?: () => Window;
+  children: React.ReactElement;
+}
+
+function EsconderBar(props:Props){
+    const { children, window } = props;
+    const trigger = useScrollTrigger({
+        target: window ? window() : undefined,
+      });
+      return (
+        <Slide appear={false} direction="down" in={!trigger}>
+          {children}
+        </Slide>
+      );
+    }
 
 function Navbar() {
     let history = useHistory(); // para redireccionar
@@ -13,6 +32,7 @@ function Navbar() {
     }
     return (
         <>
+        <EsconderBar>
             <AppBar position="static" id="navegacao">
                 <Toolbar variant="dense" >
                     <Box mx={1}>
@@ -25,7 +45,7 @@ function Navbar() {
                         </Typography>
                         </Link>
                     </Box>
-                    <Box marginLeft="750px" display="flex">
+                    <Box display="flex">
                         <Box mx={1} className='cursor'>
                             <Link to='/home' className="text-decorator-none">
                             <Typography variant="h6" color="inherit">
@@ -54,18 +74,13 @@ function Navbar() {
                                 </Typography>
                             </Link>
                         </Box>
-                        <Box mx={1} className='cursor'>
-                                {/* botão de logout com evento de click */}
-                                <Typography variant="h6" color="inherit" onClick={()=> logout()}>
-                                    Logout
-                                </Typography>
-                                   {/* botão de logout com evento de click */}
-                        </Box>
                     </Box>
 
                 </Toolbar>
             </AppBar>
+            </EsconderBar>
         </>
+    
     )
 }
 

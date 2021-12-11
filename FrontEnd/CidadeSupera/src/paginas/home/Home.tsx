@@ -1,13 +1,15 @@
 import React from 'react'
 import './Home.css';
-import {Grid, Box, Typography, Button} from '@material-ui/core';
+import {Grid, Box, Typography, Button, Container} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import Sobre from '../sobrenos/SobreNos'
 
 function Home() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" className="home">
+        <Container maxWidth="lg">
+        
+                    <Grid container direction="row" justifyContent="center" alignItems="center" className="home">
                 <Grid alignItems="center" item xs={6} justifyContent="center">
                     <Box paddingX={18} paddingTop={15}>
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="texto-home" >Seja Bem-Vinde ao Cidade Supera!</Typography>
@@ -25,6 +27,7 @@ function Home() {
                     </Box>
                 </Grid>
             </Grid>
+        </Container>
         </>
     )
 }
