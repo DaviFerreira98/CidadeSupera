@@ -1,10 +1,12 @@
 import React from 'react'
-import {Grid} from '@material-ui/core';
+import {Grid, Box, Typography} from '@material-ui/core';
 
 function Sobre() {
     return (
         <Grid container>
-            <h1>Em Construção</h1>
+            <Box>
+                <h1>AGORA VAI </h1>
+            </Box>
         </Grid>
             
     )

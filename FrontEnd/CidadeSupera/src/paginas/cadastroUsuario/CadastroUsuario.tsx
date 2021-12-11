@@ -65,12 +65,12 @@ function CadastroUsuario() {
                         <img src="https://i.imgur.com/MIYkCjy.png" alt="logo Cidade Supera" />
                     </Box>
                     <Box marginTop={4} textAlign='center'>
-                        <form >
+                        <form onSubmit={onSubmit}>
                             <Typography variant='h5' gutterBottom color='textPrimary' component='h3' align='left'>Informações básicas</Typography>
-                            <TextField id='nome' label='Nome' variant='standard' name='nome' margin='normal' fullWidth />
-                            <TextField id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                            <TextField id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-                            <TextField id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
+                            <TextField value={user.nome} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='standard' name='nome' margin='normal' fullWidth />
+                            <TextField value={user.usuario} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='standard' name='usuario' margin='normal' fullWidth />
+                            <TextField value={user.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='standard' name='senha' margin='normal' type='password' fullWidth />
+                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='standard' name='confirmarSenha' margin='normal' type='password' fullWidth />
                             <Box display='flex' justifyContent='center' marginTop={2} textAlign='center'>
                                 <Link to='/login' className='text-decorator-none'>
                                     <Button variant='contained' className='btnCancelar'>
@@ -78,7 +78,7 @@ function CadastroUsuario() {
                                     </Button>
                                 </Link>
                                 <Button type='submit' variant='contained' className='botao1'>
-                                        Cadastrar
+                                    Cadastrar
                                 </Button>
                             </Box>
                         </form>

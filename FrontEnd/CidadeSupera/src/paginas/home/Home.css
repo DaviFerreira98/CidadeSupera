@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Poligon Regular Link';
+    src: url('../../../src/assets/fonts/Poligon/Poligon-Black.eot');
+}
+
+body {
+    font-family: 'Poligon', sans-serif !important;
+}
+
 .home {
     background-color: white;
 }

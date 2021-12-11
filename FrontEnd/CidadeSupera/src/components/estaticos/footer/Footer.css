@@ -9,9 +9,14 @@
 }
 
 .txt-footer {
-    color: rgba(31, 25, 25, 0.815) !important;
+    color: rgba(31, 25, 25, 0.856) !important;
 }
 
 .bold {
     font-weight: bold !important;
+}
+
+.styleIcon {
+    font-size: 40px !important;
+    color: rgba(31, 25, 25, 0.856) !important;
 }

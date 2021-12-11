@@ -1,4 +1,4 @@
-.texto {
+.texto-equipe {
     color: #FF0064 !important;
 }
 
@@ -14,8 +14,28 @@
     color: white !important;
 }
 
-.cardMedia {
-    padding-top: '81.25%';
-    border-radius: '50%';
-    margin: '28px';
+.imagem{
+  background-image: url(https://i.imgur.com/9E1Vw0Y.jpg);
+  background-repeat: no-repeat;
+  width: 40vh;
+  min-height: 30vh;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.imagem-blur{
+  background-image: url(https://i.imgur.com/9E1Vw0Y.jpg);
+  background-repeat: no-repeat;
+  width: 40vh;
+  min-height: 30vh;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-decorator-none{
+  text-decoration: none;
 }

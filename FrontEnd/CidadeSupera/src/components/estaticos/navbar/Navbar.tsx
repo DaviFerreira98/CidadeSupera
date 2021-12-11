@@ -25,7 +25,7 @@ function Navbar() {
                         </Typography>
                         </Link>
                     </Box>
-                    <Box marginLeft="750px" display="flex">
+                    <Box display="flex">
                         <Box mx={1} className='cursor'>
                             <Link to='/home' className="text-decorator-none">
                             <Typography variant="h6" color="inherit">
