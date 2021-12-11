@@ -13,7 +13,7 @@ function Footer() {
                 <Grid item xs={4}>
                     <Box padding={7}>
                         <Box paddingBottom={2}>
-                            <Typography variant="h5" align="left" className='txt-footer bold' >Cidade Supera</Typography>
+                            <h5 className='txt-footer bold' >Cidade Supera</h5>
                         </Box>
                         <Typography align="left" className='txt-footer' >Nós somos uma rede Social e temos como objetivo
                             conectar os problemas das pessoas com as soluções</Typography>
