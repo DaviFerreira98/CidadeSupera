@@ -1,5 +1,7 @@
-.texto {
+.textoEquipe {
     color: #FF0064 !important;
+    text-align: center;
+    font-size: 40px;
 }
 
 .img-container {

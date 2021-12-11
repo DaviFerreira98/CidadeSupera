@@ -14,7 +14,7 @@ function Equipe() {
         <Grid container direction="row" justifyContent="center" alignItems="center">
             <Grid item xs={12} justifyContent="center" >
                 <Box display='center' paddingTop={2}>
-                    <Typography variant="h4" component="h4" align="center" className='texto'>Nosso Time:</Typography>
+                    <h3 className='textoEquipe' >Nosso Time:</ h3>
                 </Box>
             </Grid>
             <Grid item xs={4} >
@@ -53,7 +53,7 @@ function Equipe() {
                 </Grid>
             </Grid>
             <Grid item xs={12} justifyContent="center">
-                <Box display="flex" justifyContent="center" paddingTop={6}>
+                <Box display="flex" justifyContent="center" paddingTop={6} paddingBottom={10} >
                     <Link to='/sobrenos' className="text-decorator-none">
                         <Button variant="outlined" className='botao-equipe'>Sobre Nós</Button>
                     </Link>

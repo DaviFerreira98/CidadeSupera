@@ -20,3 +20,8 @@
 .txt{
     color: #FF0064 !important;
 }
+
+.textoLogin {
+    color: rgba(31, 25, 25, 0.815);
+    font-weight: bold !important;
+}

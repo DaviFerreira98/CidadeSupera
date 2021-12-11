@@ -1,15 +1,18 @@
 #Rodape {
-    background-color: #ff0064;
-    background-image: linear-gradient(0deg, #ff0064 0%, #fff 100%);
+    background-color: black;
 }
 
 .text-decorator-none2{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .txt-footer {
-    color: rgba(31, 25, 25, 0.815) !important;
+    color: white !important;
+}
+
+.text-decorator-none2:hover{
+    color: #FF0064 !important;
 }
 
 .bold {

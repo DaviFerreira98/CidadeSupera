@@ -48,7 +48,7 @@ function Login() {
                 <Box display="flex" justifyContent="center" alignItems="center" height="80vh" style={{ opacity: 1 }}>
                     <Box className="card" width={370} height="60vh" borderRadius={20} marginTop={12} display="flex" justifyContent="center" alignItems="center">
                         <Box marginY={2}>
-                            <Typography variant="h5" color="initial" align="center">
+                            <Typography variant="h5" align="center" className="textoLogin" >
                                 Login
                             </Typography>
                             <form onSubmit={onSubmit}>

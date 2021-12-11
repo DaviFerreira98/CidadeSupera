@@ -10,7 +10,7 @@ function SobreNos() {
                     <Typography variant="h4" component="h4" align="center" className='texto'>Nosso Time:</Typography>
                 </Box>
             </Grid>
-            <Grid item xs={6} justifyContent="center" alignItems="center">
+            <Grid item xs={6} justifyContent="center" >
                 <Box paddingTop={3} paddingLeft={25} >
                     <img src="https://i.imgur.com/9E1Vw0Y.jpg" alt="" className="img-sobre"/>
                 </Box>
@@ -32,7 +32,7 @@ function SobreNos() {
             </Grid>
                 
             <Grid item xs={6} justifyContent="center">
-                <Box paddingTop={3} paddingLeft={25}>
+                <Box paddingTop={3} paddingLeft={25}  >
                     <img src="https://i.imgur.com/9E1Vw0Y.jpg" alt="" className="img-sobre" />
                 </Box>
                 <Box paddingTop={3} paddingLeft={5}>
@@ -50,6 +50,9 @@ function SobreNos() {
                 <Box paddingTop={1} paddingLeft={5}>
                     <Typography variant="body1" color="initial" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur cumque quaerat repellat exercitationem soluta, laborum quas illo molestiae quo eum aperiam amet asperiores praesentium unde itaque ipsam inventore vel?</Typography>
                 </Box>
+            </Grid>
+            <Grid xs={12}>
+                <Box paddingBottom={10} ></Box>
             </Grid>
         </Grid>
     )
