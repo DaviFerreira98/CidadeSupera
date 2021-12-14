@@ -1,5 +1,4 @@
 .root{
-    height: calc(100% - 70px);
     overflow: scroll;
 }
 .app-bar{
