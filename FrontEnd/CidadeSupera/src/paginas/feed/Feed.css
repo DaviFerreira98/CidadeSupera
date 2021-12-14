@@ -9,3 +9,7 @@
 .favorite{
     margin-left: auto; 
 }
+
+.meio {
+    flex-direction: column;
+}

@@ -4,6 +4,7 @@ import PostCard from '../../components/estaticos/postCard/PostCard';
 import SideBar from '../../components/estaticos/sideBar/SideBar';
 import DirBar from '../../components/estaticos/lateralDir/DirBar'
 import NovoPost from '../../components/estaticos/novoPost/NovoPost';
+import ListaPostagem from '../../components/postagens/listapostagem/ListaPostagem';
 import './Feed.css'
 
 
@@ -12,17 +13,17 @@ function Feed() {
         <>
             <SideBar />
             <Box className='dir-bar'>
-            <DirBar />
+                <DirBar />
             </Box>
             <Box display='flex' className='center'>
-            <NovoPost />
+                <NovoPost />
             </Box>
-            <Box display='flex' className='center'>
-            <PostCard />
+            <Box display='flex' className='center meio'>
+                <PostCard />
             </Box>
-            
 
-            
+
+
         </>
     )
 }

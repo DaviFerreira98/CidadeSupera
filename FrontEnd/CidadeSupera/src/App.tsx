@@ -13,6 +13,9 @@ import Feed from './paginas/feed/Feed';
 import SideBar from './components/estaticos/sideBar/SideBar';
 import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
 import CadastroPost from './components/postagens/cadastropost/CadastroPost';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema'
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
+import ListaTema from './components/temas/listaTema/ListaTema';
 
 function App() {
 
@@ -54,9 +57,25 @@ function App() {
             <ListaPostagem />
           </Route>
 
+          <Route path='/temas'>
+            <ListaTema />
+          </Route>
+
           <Route exact path='/formularioPostagem'>
-              <CadastroPost />
-            </Route>
+            <CadastroPost />
+          </Route>
+
+          <Route exact path='/formularioTema'>
+            <CadastroTema />
+          </Route>
+
+          <Route exact path='/formularioTema/:id'>
+            <CadastroTema />
+          </Route>
+
+          <Route path='/deletarTema/:id'>
+            <DeletarTema />
+          </Route>
 
           <Route path='/feed'>
             <Feed />

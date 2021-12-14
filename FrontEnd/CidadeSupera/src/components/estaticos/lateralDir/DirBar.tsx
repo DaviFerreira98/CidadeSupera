@@ -1,4 +1,5 @@
 import { Paper, Button, ListSubheader,ListItem, ListItemText } from '@material-ui/core'
+import { Box } from '@mui/material'
 import React from 'react'
 import './DirBar.css'
 
@@ -11,11 +12,12 @@ const tags = [
     
 ]
 
-function SideBar() {
+function DirBar() {
     return (
-        <Paper className='logo-nome'>
-            <Button variant='outlined' className='btn'>Cidade Supera</Button>
-            <ListSubheader className='cor-nav'>{"tags"}</ListSubheader>
+        <Box display='flex'>
+        <Paper className='dir'>
+            <Button variant='outlined' className='btn'>Amigos</Button>
+            <ListSubheader className='cor-nav'></ListSubheader>
             {
                     tags.map((item)=>(
                         <ListItem dense button key={'item-${item.id}-%{item.name}'}>
@@ -24,7 +26,8 @@ function SideBar() {
                     ))
                 }
         </Paper>
+        </Box>
     )
 }
 
-export default SideBar
+export default DirBar
