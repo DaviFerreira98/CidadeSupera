@@ -20,7 +20,7 @@ function Navbar() {
                     <Box mx={1}>
                         <img src="https://i.imgur.com/x1m8CnY.png" alt="logo" className="logo" />
                     </Box>
-                    <Box  style={{flexGrow: 1}} >
+                    <Box  sx={{flexGrow: 1}} >
                         <Link to='/home' className="text-decorator-none">
                         <Typography variant="h5" color="inherit" className='cursor' >
                             Cidade Supera

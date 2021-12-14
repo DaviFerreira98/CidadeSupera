@@ -1,0 +1,12 @@
+.root{
+    height: calc(100% - 70px);
+    overflow: scroll;
+}
+.app-bar{
+    top: auto;
+    bottom: 0;
+    align-items: center;
+}
+.btn{
+    margin-right: 16px;
+}
