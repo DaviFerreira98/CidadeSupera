@@ -4,14 +4,6 @@ import useLocalStorage from 'react-use-localstorage';
 import { useHistory } from 'react-router-dom';
 import './SideBar.css'
 
-const topicos = [
-    {id:1 , name:"Educação"},
-    {id:2 , name:"Segurança"},
-    {id:3 , name:"Saude"},
-    {id:4 , name:"Transporte"},
-    {id:5 , name:"Infraestrutura"}
-    
-]
 
 
 function SideBar() {
@@ -23,17 +15,34 @@ function SideBar() {
     }
     return (
     <>
+        <Box display='flex'>
         <Paper className='barra'>
             <Button variant='outlined' className='btn'>Cidade Supera</Button>
-            <Box mx={1} className='cursor'>
-                        {/* botão de logout com evento de click */}
-                        <Typography variant="h6" color="inherit" onClick={()=> logout()}>
-                            Logout
-                        </Typography>
-                        {/* botão de logout com evento de click */}
+            
+            <Box mx={1} className='cursor margin'>
+                <Typography variant="h6" color="inherit" className='margin'>
+                        Home
+                    </Typography>
                     </Box>
+                    <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit" className='margin'>
+                        Perfil
+                    </Typography>
+                    </Box>
+                    <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit" className='margin'>
+                        Alguma Coisa
+                    </Typography>
+                    </Box>
+                <Box mx={1} className='cursor margin'>
+                <Typography variant="h6" color="inherit" className='margin' onClick={()=> logout()}>
+                        Logout
+                    </Typography>
+                    </Box>
+                    
                 
         </Paper>
+        </Box>
     </>
     )
 }

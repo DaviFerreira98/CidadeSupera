@@ -6,23 +6,6 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import './Navbar.css';
 
-interface Props{
-    window?: () => Window;
-  children: React.ReactElement;
-}
-
-function EsconderBar(props:Props){
-    const { children, window } = props;
-    const trigger = useScrollTrigger({
-        target: window ? window() : undefined,
-      });
-      return (
-        <Slide appear={false} direction="down" in={!trigger}>
-          {children}
-        </Slide>
-      );
-    }
-
 function Navbar() {
     let history = useHistory(); // para redireccionar
     const [token, setToken] = useLocalStorage('token'); // para guardar el token en el localstorage
@@ -32,15 +15,14 @@ function Navbar() {
     }
     return (
         <>
-        <EsconderBar>
             <AppBar position="static" id="navegacao">
                 <Toolbar variant="dense" >
                     <Box mx={1}>
                         <img src="https://i.imgur.com/x1m8CnY.png" alt="logo" className="logo" />
                     </Box>
-                    <Box className='cursor' style={{flexGrow: 1}} >
+                    <Box  style={{flexGrow: 1}} >
                         <Link to='/home' className="text-decorator-none">
-                        <Typography variant="h5" color="inherit" >
+                        <Typography variant="h5" color="inherit" className='cursor' >
                             Cidade Supera
                         </Typography>
                         </Link>
@@ -78,7 +60,6 @@ function Navbar() {
 
                 </Toolbar>
             </AppBar>
-            </EsconderBar>
         </>
     
     )
