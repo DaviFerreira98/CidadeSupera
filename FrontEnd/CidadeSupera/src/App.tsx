@@ -13,49 +13,49 @@ import Feed from './paginas/feed/Feed';
 import SideBar from './components/estaticos/sideBar/SideBar';
 
 function App() {
+
   return (
-    <Router>
-      <Navbar />
-        <Switch>
-          <div style={{minHeight: '100vh'}}>
+    <>
+      <Router>
+        <Navbar />
+        <Switch >
 
-            <Route exact path='/'>
-              <Home />
-            </Route>
+          <Route exact path='/'>
+            <Home />
+          </Route>
 
-            <Route path='/home'>
-              <Home />
-            </Route>
+          <Route path='/home'>
+            <Home />
+          </Route>
 
-            <Route path='/sobre'>
-              <Sobre />
-            </Route>
+          <Route path='/sobre'>
+            <Sobre />
+          </Route>
 
-            <Route path='/equipe'>
-              <Equipe />
-            </Route>
+          <Route path='/equipe'>
+            <Equipe />
+          </Route>
 
-            <Route path='/sobrenos'>
-              <SobreNos />
-            </Route>
+          <Route path='/sobrenos'>
+            <SobreNos />
+          </Route>
 
-            <Route path='/login'>
-              <Login />
-            </Route>
+          <Route path='/login'>
+            <Login />
+          </Route>
 
-            <Route path='/cadastroUsuario'>
-              <CadastroUsuario />
-            </Route>
+          <Route path='/cadastroUsuario'>
+            <CadastroUsuario />
+          </Route>
 
-            <Route path='/feed'>
-              
-              <Feed />
-            </Route>
+          <Route path='/feed'>
+            <Feed />
+          </Route>
 
-          </div>
         </Switch>
-      <Footer />
-    </Router>
+        <Footer />
+      </Router >
+    </>
   );
 }
 

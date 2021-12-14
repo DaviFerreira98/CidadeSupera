@@ -1,14 +1,14 @@
 import React from 'react'
 import './Home.css';
-import { Grid, Box, Typography, Button, Container } from '@material-ui/core';
+import { Grid, Box, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import Equipe from '../equipe/Equipe';
 
 function Home() {
     return (
         <>
-
             <Grid container direction="row" justifyContent="center" alignItems="center" className="home">
+
                 <Grid alignItems="center" item xs={6} justifyContent="center">
                     <Box paddingX={18} paddingTop={15} >
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="texto-home" >Seja Bem-Vinde ao Cidade Supera!</Typography>
@@ -28,8 +28,9 @@ function Home() {
                         <img src="https://i.imgur.com/H4QDZL3.jpg" alt="" className="img-home" />
                     </Box>
                 </Grid>
+
                 <Grid xs={12}>
-                    <Box  paddingBottom={20} ></Box>
+                    <Box paddingBottom={20} ></Box>
                 </Grid>
 
                 {/* integrando as outras páginas*/}
