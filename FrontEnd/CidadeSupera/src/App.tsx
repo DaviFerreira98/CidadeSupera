@@ -11,6 +11,8 @@ import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Feed from './paginas/feed/Feed';
 import SideBar from './components/estaticos/sideBar/SideBar';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
+import CadastroPost from './components/postagens/cadastropost/CadastroPost';
 
 function App() {
 
@@ -47,6 +49,14 @@ function App() {
           <Route path='/cadastroUsuario'>
             <CadastroUsuario />
           </Route>
+
+          <Route path='/posts'>
+            <ListaPostagem />
+          </Route>
+
+          <Route exact path='/formularioPostagem'>
+              <CadastroPost />
+            </Route>
 
           <Route path='/feed'>
             <Feed />

@@ -37,7 +37,7 @@ function ListaPostagem() {
         <>
             {
                 posts.map(post => (
-                    <Box>
+                    <Box m={2} >
                         <Typography color="textSecondary" gutterBottom>
                             Postagens
                         </Typography>

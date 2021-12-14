@@ -10,21 +10,19 @@
     color: #FF0064;
 }
 
-.botaoLogin {
+.botao {
     border-color: white !important;
     background-color: #FF0064 !important;
     color: white !important;
-    margin-left: 4px !important;
-}
-
-.botaoSaiba {
-    border-color: white !important;
-    background-color: #4578FF !important;
-    color: white !important;
-    margin-right: 4px !important;
 }
 
 .texto-home {
     color: rgba(31, 25, 25, 0.815);
     font-weight: bold !important;
+}
+
+.react-player {
+    position: cover !important;
+    width: 100% !important;
+    height: 100% !important;
 }

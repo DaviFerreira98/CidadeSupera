@@ -22,7 +22,7 @@ function Equipe() {
                 </Grid>
                 <Grid item xs={6}>
                     <Grid justifyContent="center">
-                        <Box paddingTop={3} paddingRight={30}>
+                        <Box paddingTop={3} paddingLeft={10}>
                             <img src="https://i.imgur.com/9E1Vw0Y.jpg" alt="" className="img-container" />
                         </Box>
                     </Grid>
@@ -36,7 +36,7 @@ function Equipe() {
                 </Grid>
                 <Grid item xs={6}>
                     <Grid justifyContent="center">
-                        <Box paddingTop={2} paddingRight={25}>
+                        <Box paddingTop={2} paddingLeft={10}>
                             <img src="https://i.imgur.com/9E1Vw0Y.jpg" alt="" className="img-container" />
                         </Box>
                     </Grid>
