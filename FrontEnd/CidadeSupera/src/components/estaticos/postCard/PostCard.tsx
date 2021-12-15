@@ -7,16 +7,27 @@ import MessageIcon from '@material-ui/icons/Message';
 import './PostCard.css'
 import Postagem from '../../../models/Postagem';
 import { useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import {toast} from 'react-toastify';
 
 function PostCard() {
   const [posts, setPosts] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
   let history = useHistory();
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado")
+      toast.info('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+    })
       history.push("/login")
 
     }

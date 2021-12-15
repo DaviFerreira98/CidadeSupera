@@ -5,6 +5,7 @@ import SideBar from '../../components/estaticos/sideBar/SideBar';
 import DirBar from '../../components/estaticos/lateralDir/DirBar'
 import NovoPost from '../../components/estaticos/novoPost/NovoPost';
 import ListaPostagem from '../../components/postagens/listapostagem/ListaPostagem';
+import CadastroPost from '../../components/postagens/cadastropost/CadastroPost';
 import './Feed.css'
 
 
@@ -21,9 +22,6 @@ function Feed() {
             <Box display='flex' className='center meio'>
                 <PostCard />
             </Box>
-
-
-
         </>
     )
 }

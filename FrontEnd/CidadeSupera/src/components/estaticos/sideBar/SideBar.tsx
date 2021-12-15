@@ -1,18 +1,35 @@
 import { Paper, Button, ListSubheader, ListItem, ListItemText, Typography, Box } from '@material-ui/core';
 import React from 'react';
-import useLocalStorage from 'react-use-localstorage';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './SideBar.css'
-
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { addToken } from '../../../store/tokens/actions';
+import { toast } from 'react-toastify';
 
 
 function SideBar() {
-    let history = useHistory(); // para redireccionar
-    const [token, setToken] = useLocalStorage('token'); // para guardar el token en el localstorage
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens);
+    let history = useHistory();
+    const dispatch = useDispatch();
+
     function logout() {
-        setToken(''); // para apagar el token del localstorage
-        history.push('/login'); // para redireccionar a la pagina de login
+        dispatch(addToken(''));
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        })
+        history.push('/login');
     }
+
     return (
         <>
             <Box display='flex'>
@@ -20,19 +37,25 @@ function SideBar() {
                     <Button variant='outlined' className='btn'>Cidade Supera</Button>
 
                     <Box mx={1} className='cursor margin' paddingTop={2}>
-                        <Typography variant="h6" className='margin'>
-                            Home
-                        </Typography>
+                        <Link to='/home' className="text-decorator-none">
+                            <Typography variant="h6" className='margin'>
+                                Home
+                            </Typography>
+                        </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
-                        <Typography variant="h6" color="inherit" className='margin'>
-                            Perfil
-                        </Typography>
+                        <Link to='/perfil' className="text-decorator-none">
+                            <Typography variant="h6" color="inherit" className='margin'>
+                                Perfil
+                            </Typography>
+                        </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
-                        <Typography variant="h6" color="inherit" className='margin'>
-                            Alguma Coisa
-                        </Typography>
+                        <Link to='/temas' className="text-decorator-none">
+                            <Typography variant="h6" color="inherit" className='margin'>
+                                Educação
+                            </Typography>
+                        </Link>
                     </Box>
                     <Box mx={1} className='cursor margin'>
                         <Typography variant="h6" color="inherit" className='margin' onClick={() => logout()}>

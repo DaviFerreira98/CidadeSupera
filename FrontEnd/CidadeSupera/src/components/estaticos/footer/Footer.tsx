@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 import TextField from '@mui/material/TextField';
 import { makeStyles } from "@material-ui/core/styles";
-import useLocalStorage from 'react-use-localstorage';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 const useStyles = makeStyles({
@@ -45,7 +46,8 @@ const useStyles = makeStyles({
 export const Footer = React.memo(function FooterDemo() {
 
     const styles = useStyles();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector < TokenState, TokenState["tokens"]>(
+        (state) => state.tokens );
 
     var footerComponent;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import Home from './paginas/home/Home';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
@@ -17,17 +17,24 @@ import CadastroTema from './components/temas/cadastroTema/CadastroTema'
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaTema from './components/temas/listaTema/ListaTema';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Perfil from './paginas/perfil/Perfil';
 
 function App() {
-
+  
   return (
     <>
+    <Provider store={store}>
+      <ToastContainer />
       <Router>
         <Navbar />
         <Switch >
-
-          <Route exact path='/'>
-            <Home />
+          
+          <Route exact path='/' >
+            <Home/>
           </Route>
 
           <Route path='/home'>
@@ -78,11 +85,11 @@ function App() {
             <CadastroTema />
           </Route>
 
-          <Route path='/deletarTema/:id'>
+          <Route exact path='/deletarTema/:id'>
             <DeletarTema />
           </Route>
 
-          <Route path='/deletarPostagem/:id'>
+          <Route exact path='/deletarPostagem/:id'>
             <DeletarPostagem />
           </Route>
 
@@ -90,9 +97,14 @@ function App() {
             <Feed />
           </Route>
 
+          <Route path='/perfil'>
+            <Perfil />
+          </Route>
+
         </Switch>
         <Footer />
       </Router >
+      </Provider>
     </>
   );
 }

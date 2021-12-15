@@ -4,9 +4,6 @@ import ReactPlayer from 'react-player'
 import { Grid, Box, Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import { Fullscreen, VideoCallRounded } from "@material-ui/icons";
-import Navbar from "../../components/estaticos/navbar/Navbar";
-
 function Home() {
     return (
         <>
@@ -44,6 +41,11 @@ function Home() {
                         <Link to="/sobre" className="text-decorator-none">
                             <Button variant="outlined" className="botao">
                                 Saiba mais
+                            </Button>
+                        </Link>
+                        <Link to="/login" className="text-decorator-none">
+                            <Button variant="outlined" className="botao">
+                                Logue-se
                             </Button>
                         </Link>
                     </Box>

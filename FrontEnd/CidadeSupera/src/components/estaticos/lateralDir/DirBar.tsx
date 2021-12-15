@@ -1,30 +1,22 @@
 import { Paper, Button, ListSubheader,ListItem, ListItemText } from '@material-ui/core'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
 import './DirBar.css'
 
-const tags = [
-    {id:1 , name:"#Educação"},
-    {id:2 , name:"#Segurança"},
-    {id:3 , name:"#Saude"},
-    {id:4 , name:"#Transporte"},
-    {id:5 , name:"#Infraestrutura"}
-    
-]
 
 function DirBar() {
     return (
         <Box display='flex'>
         <Paper className='dir'>
             <Button variant='outlined' className='btn'>Amigos</Button>
-            <ListSubheader className='cor-nav'></ListSubheader>
-            {
-                    tags.map((item)=>(
-                        <ListItem dense button key={'item-${item.id}-%{item.name}'}>
-                            <ListItemText primary={'#${item.name}'}></ListItemText>
-                        </ListItem>
-                    ))
-                }
+            <Box display='flex' alignItems='center' justifyContent='center'>
+                <img src="https://image.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg" alt="" className='amigos' />
+                Roberto
+            </Box>
+            <Box display='flex' alignItems='center' justifyContent='center'>
+                <img src="https://image.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg" alt="" className='amigos' />
+                Roberto
+            </Box>
         </Paper>
         </Box>
     )
