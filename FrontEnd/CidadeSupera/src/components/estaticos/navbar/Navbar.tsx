@@ -35,7 +35,7 @@ function Navbar() {
 
     var navbarComponent;
 
-    if ( token == "") {
+    if ( token == "" ) {
         navbarComponent = <AppBar position="static" id="navegacao">
             <Toolbar variant="dense" >
                 <Box mx={1}>

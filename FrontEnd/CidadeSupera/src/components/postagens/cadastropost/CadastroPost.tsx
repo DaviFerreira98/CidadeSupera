@@ -1,5 +1,5 @@
-import { Button, Grid, Box, FormControl, FormHelperText, InputLabel, Select, TextField, Typography } from '@material-ui/core'
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import { Button, Grid, Box, FormControl, FormHelperText, InputLabel, Select, TextField, Typography, MenuItem, Input, CardHeader } from '@material-ui/core'
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
@@ -36,7 +36,7 @@ function CadastroPost() {
         tema: null
     })
 
-    useEffect(() => { 
+    useEffect(() => {
         setPostagem({
             ...postagem,
             tema: tema
@@ -111,13 +111,22 @@ function CadastroPost() {
                         <Typography variant="h3" color="textSecondary" component="h1" align="center" >Crie nova postagem</Typography>
                         <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                         <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                        <input value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} type='image' />
-
+                        < TextField value={postagem.foto} type="file" name="link-foto" />
                         <FormControl >
                             <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
                             <Select
                                 labelId="demo-simple-select-helper-label"
-                                id="demo-simple-select-helper">
+                                id="demo-simple-select-helper"
+                                onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                                    headers: {
+                                        'Authorization': token
+                                    }
+                                })}>
+                                {
+                                    temas.map(tema => (
+                                        <MenuItem value={tema.id}>{tema.categoria}</MenuItem>
+                                    ))
+                                }
                             </Select>
                             <FormHelperText>Escolha um tema para a postagem</FormHelperText>
                             <Button type="submit" variant="contained" className="botaoFinal">
@@ -127,7 +136,7 @@ function CadastroPost() {
                     </form>
                 </Box>
             </Grid>
-        </Grid>
+        </Grid >
     )
 }
 

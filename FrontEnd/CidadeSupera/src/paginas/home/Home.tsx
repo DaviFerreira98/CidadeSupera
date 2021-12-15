@@ -5,6 +5,7 @@ import { Grid, Box, Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import { Fullscreen, VideoCallRounded } from "@material-ui/icons";
+import Navbar from "../../components/estaticos/navbar/Navbar";
 
 function Home() {
     return (

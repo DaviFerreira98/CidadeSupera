@@ -1,6 +1,6 @@
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Button } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
@@ -50,9 +50,26 @@ function ListaPostagem() {
                         <Typography variant="body2" component="p">
                             {post.tema?.categoria}
                         </Typography>
-                    </Box>
+                        <Box display="flex" justifyContent="center" mb={1.5}>
+
+                            <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                                <Box mx={1}>
+                                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                        atualizar
+                                    </Button>
+                                </Box>
+                            </Link>
+                            <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                                <Box mx={1}>
+                                    <Button variant="contained" size='small' color="secondary">
+                                        deletar
+                                    </Button>
+                                </Box>
+                            </Link>
+                        </Box>
+                    </Box >
                 ))
-            }
+}
         </>
     )
 }
