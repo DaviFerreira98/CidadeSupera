@@ -34,8 +34,10 @@ function SideBar() {
         <>
             <Box display='flex'>
                 <Paper className='barra'>
-                    <Button variant='outlined' className='btn'>Cidade Supera</Button>
-
+                    <Box paddingLeft={5}>
+                    <img src="https://i.imgur.com/9OXbFlu.png" alt="logo Cidade Supera" className='logoSideBar' />
+                    </Box>
+                    
                     <Box mx={1} className='cursor margin' paddingTop={2}>
                         <Link to='/home' className="text-decorator-none">
                             <Typography variant="h6" className='margin'>
@@ -57,12 +59,18 @@ function SideBar() {
                             </Typography>
                         </Link>
                     </Box>
+                    <Box mx={1} className='cursor'>
+                        <Link to='/listaPostagem' className="text-decorator-none">
+                            <Typography variant="h6" color="inherit" className='margin'>
+                                Deletar Postagem
+                            </Typography>
+                        </Link>
+                    </Box>
                     <Box mx={1} className='cursor margin'>
                         <Typography variant="h6" color="inherit" className='margin' onClick={() => logout()}>
                             Logout
                         </Typography>
                     </Box>
-
 
                 </Paper>
             </Box>
@@ -70,4 +78,4 @@ function SideBar() {
     )
 }
 
-export default SideBar
+export default SideBar;

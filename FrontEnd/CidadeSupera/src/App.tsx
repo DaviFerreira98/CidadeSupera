@@ -93,6 +93,10 @@ function App() {
             <DeletarPostagem />
           </Route>
 
+          <Route exact path='/listaPostagem'>
+            <ListaPostagem />
+          </Route>
+
           <Route path='/feed'>
             <Feed />
           </Route>

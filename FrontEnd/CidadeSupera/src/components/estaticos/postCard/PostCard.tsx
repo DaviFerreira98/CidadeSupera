@@ -9,12 +9,18 @@ import Postagem from '../../../models/Postagem';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 function PostCard() {
   const [posts, setPosts] = useState<Postagem[]>([])
   const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
   let history = useHistory();
+  const [toogle, setToogle] = useState(true)
+  const [cor, setCor] = useState('#000000')
+
+  useEffect(() => {
+    setCor((state) => toogle ? '#000000' : '#FF0064');
+  }, [toogle]);
 
   useEffect(() => {
     if (token == "") {
@@ -27,7 +33,7 @@ function PostCard() {
         draggable: false,
         theme: "colored",
         progress: undefined,
-    })
+      })
       history.push("/login")
 
     }
@@ -51,7 +57,7 @@ function PostCard() {
     <>
       {
         posts.map(post => (
-          <Card className='card'>
+          <Card className='card' >
 
             <CardHeader
               avatar={
@@ -64,24 +70,29 @@ function PostCard() {
 
                 </IconButton>
               }
-              title="Ariana"
-              subheader="Lugar ai"
+              title={ post.usuario?.nome}
+              subheader={post.localizacao}
 
             />
             <CardContent>
               <Typography variant="h5" component="h2">
                 {post.titulo}
               </Typography>
-              <Typography variant="body2" component="p">
-                {post.texto}
-              </Typography>
-              <img src={post.foto} alt="" />
+              <Box paddingTop={1}>
+                <Typography variant="body2" component="p">
+                  {post.texto}
+                </Typography>
+              </Box>
+              <Box paddingTop={1}>
+                <img src={post.foto} alt="" className='size' />
+              </Box>
               <Typography variant="body2" component="p">
                 {post.tema?.categoria}
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label='Like'>
+              <IconButton aria-label='Like' onClick={e =>
+                setToogle(state => !state)} style={{ color: cor }} className='gostei'>
                 <FavoriteIcon />
                 <Typography style={{ cursor: 'pointer' }}
                   color='textSecondary'

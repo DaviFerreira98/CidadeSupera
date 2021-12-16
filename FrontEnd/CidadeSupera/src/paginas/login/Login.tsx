@@ -68,7 +68,7 @@ function Login() {
         <Grid container className="background1" >
             <Grid item xs={12} >
                 <Box display="flex" justifyContent="center" alignItems="center" height="80vh" style={{ opacity: 1 }}>
-                    <Box className="card" width={370} height="60vh" borderRadius={20} marginTop={12} display="flex" justifyContent="center" alignItems="center">
+                    <Box className="cardLogin" marginTop={12} display="flex" justifyContent="center" alignItems="center">
                         <Box marginY={2}>
                             <Typography variant="h5" align="center" className="textoLogin" >
                                 Login

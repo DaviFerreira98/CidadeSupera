@@ -3,19 +3,20 @@ import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
+import User from '../../../models/User';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import './NovoPost.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import {toast} from 'react-toastify';
-
+import { toast } from 'react-toastify';
+import { BusinessCenterSharp } from '@mui/icons-material';
 
 function NovoPost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
-    
+
     useEffect(() => {
         if (token == "") {
             toast.info('Você precisa estar logado', {
@@ -33,6 +34,14 @@ function NovoPost() {
         }
     }, [token])
 
+    const [user, setUser] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+        })
+
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
@@ -45,8 +54,16 @@ function NovoPost() {
         texto: '',
         foto: '',
         localizacao: '',
-        tema: null
+        tema: null,
+        // user:null
     })
+
+    /* useEffect(() => {
+         setPostagem({
+             ...postagem,
+             user: user
+         })
+     }, [user])*/
 
     useEffect(() => {
         setPostagem({
@@ -54,6 +71,21 @@ function NovoPost() {
             tema: tema
         })
     }, [tema])
+
+    async function getUser() {
+        await busca("/usuarios", setUser, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    useEffect(() => {
+        getUser()
+        if (id !== undefined) {
+            findByIdPostagem(id)
+        }
+    }, [id])
 
     useEffect(() => {
         getTemas()
@@ -83,7 +115,8 @@ function NovoPost() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            //user:user
         })
 
     }
@@ -118,18 +151,18 @@ function NovoPost() {
 
         <Grid container direction="row" justifyContent="center" alignItems="center" >
             <Grid item xs={6} justifyContent="center">
-                <Box paddingBottom={10} paddingTop={10}>
+                <Box paddingBottom={7} paddingTop={3} paddingX={5} >
                     <form onSubmit={onSubmit}>
                         <Box display='flex' alignItems='center'>
                             <Avatar />
-                            <Typography variant="body1" color="initial">Nome do Usuario</Typography>
-                            </Box>
-                    
-                        <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                        <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                        < TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="foto" name="foto" variant="outlined" margin="normal" fullWidth />
-                        <FormControl >
-                            <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                            <Typography variant="body1" color="initial"> Nome de Usuário </Typography>
+                        </Box>
+                        <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Titulo" variant="standard" name="titulo" margin="normal" fullWidth />
+                        <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="standard" margin="normal" fullWidth />
+                        < TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="URL: Foto" name="foto" variant="standard" margin="normal" fullWidth />
+                        <TextField value={postagem.localizacao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="local" label="Localidade" name="localizacao" variant="standard" margin="normal" />
+                        <FormControl className='padding' >
+                            <InputLabel id="demo-simple-select-helper-label" >Tema </InputLabel>
                             <Select
                                 labelId="demo-simple-select-helper-label"
                                 id="demo-simple-select-helper"
@@ -144,9 +177,9 @@ function NovoPost() {
                                     ))
                                 }
                             </Select>
-                            <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                            <Button type="submit" variant="contained" className="botaoFinal">
-                                Finalizar
+                            <FormHelperText>Escolha um tema para a postagem </FormHelperText>
+                            <Button type="submit" variant="contained" className="botaoFinal" >
+                                Postar
                             </Button>
                         </FormControl>
                     </form>
@@ -157,3 +190,4 @@ function NovoPost() {
 }
 
 export default NovoPost;
+
