@@ -15,5 +15,9 @@
     background-color: #FF0064 !important;
     color: white !important;
 }
-
-
+.rede{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

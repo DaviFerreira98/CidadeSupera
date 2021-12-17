@@ -7,8 +7,11 @@
     background-position: center;
 }
 
-.card{
+.cardLogin {
     background: white;
+    width: 80vh !important;
+    height: 60vh !important;
+    border-radius: 20px;
 }
 
 .botao1 {
@@ -24,4 +27,9 @@
 .textoLogin {
     color: rgba(31, 25, 25, 0.815);
     font-weight: bold !important;
+}
+
+.padding {
+    margin-left: 20px !important;
+    margin-top: 100px !important;
 }

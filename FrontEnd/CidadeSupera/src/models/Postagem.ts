@@ -1,12 +1,14 @@
-import Tema from './Tema'
+import Tema from './Tema';
+import User from './User';
 
-interface Postagem{
+interface Postagem {
     id: number;
     titulo: string;
     texto: string;
     foto: string;
     localizacao: string;
-    tema?: Tema| null
+    tema?: Tema| null;
+    usuario?: User| null
 }
 
 export default Postagem;

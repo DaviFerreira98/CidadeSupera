@@ -3,6 +3,7 @@ import "./Home.css";
 import ReactPlayer from 'react-player'
 import { Grid, Box, Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import {motion, AnimatePresence} from 'framer-motion'
 
 function Home() {
     return (
@@ -78,6 +79,8 @@ function Home() {
                             url="https://www.youtube.com/embed/vq5NvJvr55Q">
                         </ReactPlayer>
                     </Box>
+
+
                 </Grid>
                 {/*Não escreva nada abaixo*/}
             </Grid>

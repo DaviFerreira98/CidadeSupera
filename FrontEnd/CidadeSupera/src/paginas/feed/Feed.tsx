@@ -7,6 +7,7 @@ import NovoPost from '../../components/estaticos/novoPost/NovoPost';
 import ListaPostagem from '../../components/postagens/listapostagem/ListaPostagem';
 import CadastroPost from '../../components/postagens/cadastropost/CadastroPost';
 import './Feed.css'
+import CadastroTema from '../../components/temas/cadastroTema/CadastroTema';
 
 
 function Feed() {
@@ -17,7 +18,7 @@ function Feed() {
                 <DirBar />
             </Box>
             <Box display='flex' className='center'>
-                <NovoPost />
+                <CadastroPost />
             </Box>
             <Box display='flex' className='center meio'>
                 <PostCard />
