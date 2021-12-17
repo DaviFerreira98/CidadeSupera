@@ -32,10 +32,6 @@ public class Tema {
 	@Size(min=5, message= "Digite a quantidade adequade de caracteres")
 	private String descricao;
 	
-	@NotNull
-	@Value("True")
-	private boolean valido;
-	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
@@ -62,14 +58,6 @@ public class Tema {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public boolean isValido() {
-		return valido;
-	}
-
-	public void setValido(boolean valido) {
-		this.valido = valido;
 	}
 
 	public List<Postagem> getPostagem() {

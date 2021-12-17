@@ -39,6 +39,8 @@ public class Usuario {
 	@Size(min = 8)
 	private String senha;
 	
+	private String fotoPerfil;
+	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
@@ -73,6 +75,14 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(String fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
 	}
 
 	public List<Postagem> getPostagem() {

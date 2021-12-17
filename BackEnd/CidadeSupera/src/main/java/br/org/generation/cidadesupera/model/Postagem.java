@@ -31,11 +31,6 @@ public class Postagem {
 	@Size (min = 4,message = "Por favor, digite a quantidade adequada de caracteres.")
 	private String texto;
 	
-	@NotNull
-	@Temporal (TemporalType.TIMESTAMP)
-	private Date data = new java.sql.Date(System.currentTimeMillis());
-	
-	@NotNull
 	private String localizacao;
 	
 	private String foto;
@@ -70,14 +65,6 @@ public class Postagem {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
 	}
 
 	public String getLocalizacao() {
