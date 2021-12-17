@@ -17,7 +17,7 @@ function Feed() {
                 <DirBar />
             </Box>
             <Box display='flex' className='center'>
-                <NovoPost />
+                <CadastroPost />
             </Box>
             <Box display='flex' className='center meio'>
                 <PostCard />

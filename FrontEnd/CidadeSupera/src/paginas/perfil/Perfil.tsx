@@ -1,13 +1,73 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
-import { Box, Button, Card, CardContent, Grid, Typography } from '@material-ui/core'
-import { shadows } from '@mui/system';
+import { Box, Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
 import './Perfil.css'
 import InfoIcon from '@mui/icons-material/Info';
-import { Link } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { useSelector,  useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import User from '../../models/User';
+import { busca } from '../../services/Service';
+import { addToken } from "../../store/tokens/actions";
 
 function Perfil() {
+    const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
+    let history = useHistory();
+    const { id } = useParams<{ id: string }>();
+    const dispatch = useDispatch();
+
+    const [user, setUser] = useState<User>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: ''
+    })
+
+    function logout() {
+        dispatch(addToken(''));
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        })
+        history.push('/login');
+    }
+
+    useEffect(() => {
+        if (token == "") {
+            toast.info('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
+            history.push("/login")
+
+        }
+    }, [token])
+
+    async function getUser() {
+        await busca("/usuarios/", setUser, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    useEffect(() => {
+        getUser()
+    }, [id]);
 
     const [value, setValue] = React.useState(0);
 
@@ -34,7 +94,7 @@ function Perfil() {
             <Grid className='lugar-card'>
                 <Card>
                     <CardContent>
-                        <Typography variant="h5" color="initial">Nome do Usuário</Typography>
+                        <Typography variant="h5" color="initial">{user.nome}</Typography>
                         <Typography variant="body2" component="p">
                             Sobre mim
                         </Typography>
@@ -45,13 +105,13 @@ function Perfil() {
                     <CardContent>
                         <Typography variant="h5" color="initial">Informações</Typography>
                         <Typography variant="body2" component="p">
-                            Nome:
+                            Nome: {user.nome}
                         </Typography>
                         <Typography variant="body2" component="p">
                             Telefone:
                         </Typography>
                         <Typography variant="body2" component="p">
-                            Email:
+                            Email: {user.usuario}
                         </Typography>
                         <Typography variant="body2" component="p" className='space'>
                             Data de Nascimento:
@@ -64,13 +124,14 @@ function Perfil() {
                 <Card >
                     <CardContent>
                         <Typography variant="h5" color="initial">Menu</Typography>
-                        <Typography variant="body2" component="p" >
-                            Home
-                        </Typography>
-                        <Typography variant="body2" component="p" >
+                        <Link to='/feed' className='text-decorator'>
+                            <Typography variant="body2" component="p" >
+                                Feed
+                            </Typography>
+                        </Link>
+                        <Typography variant="body2" component="p" onClick={() => logout()} >
                             Logout
                         </Typography>
-
                     </CardContent>
                 </Card>
             </Grid>

@@ -5,18 +5,25 @@
     width: 100%;
     position: relative;
 }
+
 .imgvoltar{
     width: 90px;
 }
+
 .lugar-card{
     display :flex;
     justify-content: center;
     align-items: center;
 }
+
 .tam{
     width: 500px;
     margin: 50px;
+    margin-bottom: 16px;
+    justify-content: center!important;
+    width: 40% !important;
 }
+
 .caixa{
     display: flex;
 }
@@ -24,3 +31,4 @@
 .space {
     margin-top: 5px !important;
 }
+

@@ -1,16 +1,19 @@
-import { Button, Grid, Box, FormControl, FormHelperText, InputLabel, Select, TextField, Typography, MenuItem, Input, CardHeader } from '@material-ui/core'
+import { Button, Grid, Box, FormControl, FormHelperText, InputLabel, Select, TextField, Typography, MenuItem, Input, CardHeader, Avatar } from '@material-ui/core'
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
+import User from '../../../models/User';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import './CadastroPost.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
+
 
 function CadastroPost() {
     let history = useHistory();
+    const idUser = useSelector<TokenState, TokenState["ids"]>((state) => state.ids);
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
@@ -32,6 +35,15 @@ function CadastroPost() {
         }
     }, [token])
 
+    const [user, setUser] = useState<User>(
+        {
+            id: idUser,
+            nome: '',
+            usuario: '',
+            senha: '',
+
+        })
+
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
@@ -44,13 +56,21 @@ function CadastroPost() {
         texto: '',
         foto: '',
         localizacao: '',
-        tema: null
+        tema: null,
+        usuario: user
     })
+
+    /*useEffect(() => {
+        setPostagem({
+            ...postagem,
+            usuario: user,
+        })
+    }, [user])*/
 
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
         })
     }, [tema])
 
@@ -70,7 +90,7 @@ function CadastroPost() {
     }
 
     async function findByIdPostagem(id: string) {
-        await buscaId(`postagens/${id}`, setPostagem, {
+        await buscaId(`/postagens/${id}`, setPostagem, {
             headers: {
                 'Authorization': token
             }
@@ -134,10 +154,12 @@ function CadastroPost() {
     return (
 
         <Grid container direction="row" justifyContent="center" alignItems="center" >
+
             <Grid item xs={6} justifyContent="center">
                 <Box paddingBottom={10} paddingTop={10}>
                     <form onSubmit={onSubmit}>
-                        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Crie nova postagem</Typography>
+
+                        <Typography variant="h3" color="textSecondary" component="h1" align="center" >{idUser}</Typography>
                         <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                         <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
                         < TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="foto" name="foto" variant="outlined" margin="normal" fullWidth />
@@ -170,3 +192,4 @@ function CadastroPost() {
 }
 
 export default CadastroPost;
+

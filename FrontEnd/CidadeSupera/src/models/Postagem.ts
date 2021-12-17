@@ -7,7 +7,7 @@ interface Postagem {
     texto: string;
     foto: string;
     localizacao: string;
-    tema?: Tema| null;
+    tema?: Tema| null
     usuario?: User| null
 }
 

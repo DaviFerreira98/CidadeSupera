@@ -1,12 +1,11 @@
 import { Paper, Button, ListSubheader, ListItem, ListItemText, Typography, Box } from '@material-ui/core';
 import React from 'react';
 import { useHistory, Link } from 'react-router-dom';
-import './SideBar.css'
+import './SideBar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { addToken } from '../../../store/tokens/actions';
 import { toast } from 'react-toastify';
-
 
 function SideBar() {
 
@@ -53,9 +52,9 @@ function SideBar() {
                         </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
-                        <Link to='/temas' className="text-decorator-none">
+                        <Link to='/formularioTema' className="text-decorator-none">
                             <Typography variant="h6" color="inherit" className='margin'>
-                                Educação
+                                Temas
                             </Typography>
                         </Link>
                     </Box>

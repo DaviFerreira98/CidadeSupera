@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { login } from '../../services/Service';
 import UserLogin from "../../models/UserLogin";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/actions";
+import { addId, addToken } from "../../store/tokens/actions";
 import { toast } from 'react-toastify';
 import './Login.css';
 
@@ -12,6 +12,15 @@ function Login() {
     let history = useHistory();
     const dispatch = useDispatch();
     const [token, setToken] = useState('');
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
+        {
+            id: 0,
+            usuario: '',
+            senha: '',
+            token: ''
+
+        }
+    )
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -29,16 +38,17 @@ function Login() {
     }
 
     useEffect(() => {
-        if (token !== '') {
-            dispatch(addToken(token));
+        if (respUserLogin.token !== '') {
+            dispatch(addToken(respUserLogin.token));
+            dispatch(addId(respUserLogin.id));
             history.push('/feed')
         }
-    }, [token])
+    }, [respUserLogin.token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
-            await login(`/usuarios/logar`, userLogin, setToken)
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
 
             toast.success('Usuário logado com sucesso!', {
                 position: "top-right",
