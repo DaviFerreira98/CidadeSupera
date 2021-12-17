@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.generation.cidadesupera.model.Tema;
 import br.org.generation.cidadesupera.model.Usuario;
 import br.org.generation.cidadesupera.model.UsuarioLogin;
 import br.org.generation.cidadesupera.repository.UsuarioRepository;
