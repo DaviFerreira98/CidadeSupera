@@ -15,9 +15,29 @@
     background-color: #FF0064 !important;
     color: white !important;
 }
-.rede{
+
+.redeSocial {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    margin-right: 10px !important;
+}
+
+.txtSobre {
+    text-align: center !important;
+    font-weight: bold !important;
+}
+
+.textoTime {
+    text-align: justify !important;
+    color: black !important;
+}
+
+.transitionSize {
+    transition: transform 0.5s;
+}
+
+.transitionSize:hover {
+    transform: scale(1.2);
+    color: #FF0064 !important;
 }

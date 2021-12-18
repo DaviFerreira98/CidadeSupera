@@ -55,14 +55,14 @@ function SideBar() {
                     <Box mx={1} className='cursor'>
                         <Link to='/temas' className="text-decorator-none">
                             <Typography variant="h6" color="inherit" className='margin'>
-                                Educação
+                                Temas
                             </Typography>
                         </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
                         <Link to='/listaPostagem' className="text-decorator-none">
                             <Typography variant="h6" color="inherit" className='margin'>
-                                Deletar Postagem
+                                Deletar Post
                             </Typography>
                         </Link>
                     </Box>

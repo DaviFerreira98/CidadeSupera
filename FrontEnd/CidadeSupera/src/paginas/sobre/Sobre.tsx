@@ -20,7 +20,7 @@ function Sobre() {
                         justifyContent="center"
                         alignItems="center"
                         marginX="auto"
-                        marginTop={30}
+                        marginTop={10}
                     >
                         <Typography variant="h3" gutterBottom align="center">
                             Publique, encare os problemas e SUPERE!

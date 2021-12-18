@@ -154,15 +154,13 @@ function CadastroPost() {
     return (
 
         <Grid container direction="row" justifyContent="center" alignItems="center" >
-          
             <Grid item xs={6} justifyContent="center">
-                <Box paddingBottom={10} paddingTop={10}>
+                <Box paddingBottom={7} paddingTop={3} paddingX={5} >
                     <form onSubmit={onSubmit}>
-                   
-                        <Typography variant="h3" color="textSecondary" component="h1" align="center" >{idUser}</Typography>
-                        <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                        <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                        < TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="foto" name="foto" variant="outlined" margin="normal" fullWidth />
+                        <Typography variant="h5" color="textSecondary" component="h1" align="center" >Faça uma publicação!</Typography>
+                        <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="standard" name="titulo" margin="normal" fullWidth />
+                        <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="standard" margin="normal" fullWidth />
+                        < TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="url: foto" name="foto" variant="standard" margin="normal" fullWidth />
                         <TextField value={postagem.localizacao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="local" label="Localidade" name="localizacao" variant="standard" margin="normal" />
                         <FormControl className='padding' >
                             <InputLabel id="demo-simple-select-helper-label" >Tema </InputLabel>
@@ -182,7 +180,7 @@ function CadastroPost() {
                             </Select>
                             <FormHelperText>Escolha um tema para a postagem</FormHelperText>
                             <Button type="submit" variant="contained" className="botaoFinal">
-                                Finalizar
+                                Postar
                             </Button>
                         </FormControl>
                     </form>

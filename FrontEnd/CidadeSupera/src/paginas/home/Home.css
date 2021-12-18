@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300&display=swap');
 
 .home {
-  background-color: white;
+    background-color: white;
 }
 
 .img-home {
-  border-radius: 5%;
+    border-radius: 5%;
 }
 
 .titulo {
@@ -15,24 +15,24 @@
 }
 
 .botao {
-  border-color: #ff0064 !important;
-  background-color: white !important;
-  border-width: 3px !important;
-  color: #ff0064 !important;
-  padding: 12px 50px !important;
-  border-radius: 25px !important;
-  transition-duration: 0.4s;
+    border-color: #ff0064 !important;
+    background-color: white !important;
+    border-width: 3px !important;
+    color: #ff0064 !important;
+    padding: 12px 50px !important;
+    border-radius: 25px !important;
+    transition-duration: 0.4s;
 }
 
 .texto-home {
-  color: rgba(31, 25, 25, 0.815);
-  font-weight: bold !important;
+    color: rgba(31, 25, 25, 0.815);
+    font-weight: bold !important;
 }
 
 .react-player {
-  position: cover !important;
-  width: 640px !important;
-  height: 340px !important ;
+    position: cover !important;
+    width: 640px !important;
+    height: 340px !important;
 }
 
 .texto-titulo {
@@ -40,21 +40,21 @@
     font-size: 18px !important;
 }
 
-.texto-titulo1{
+.texto-titulo1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 800 !important;
     font-size: 40px !important;
-    
+
 }
 
 
-.fundo-rede{
+.fundo-rede {
     background-image: url("https://imgur.com/DUiYgdw") !important;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .botao-hover {
-    background-color: #ff0064; 
-    color:#ff0064;
+    background-color: #ff0064;
+    color: #ff0064;
 }
