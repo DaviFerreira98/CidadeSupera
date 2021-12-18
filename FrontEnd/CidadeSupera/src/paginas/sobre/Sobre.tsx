@@ -42,7 +42,7 @@ function Sobre() {
                         <Typography variant="h4" color="initial" align="center">
                             Cidade Supera
                             <Typography variant="h5" color="initial" align="center" >
-                                é o seu espaço de reclamação e sugestão de
+                                É o seu espaço de reclamação e sugestão de
                                 melhoria para a sua cidade. Sua manifestação poderá causar impacto
                                 na sua comunidade, superando os problemas e atingindo melhorias
                                 sociais e estruturais
@@ -85,7 +85,7 @@ function Sobre() {
                         marginRight={20}
                     >
                         <Typography variant="h5" align="center" className="texto1">
-                            Publique os problemas enfrentados infraestrutura, segurança,
+                            Publique os problemas enfrentados: infraestrutura, segurança,
                             mobilidade, educação, saúde e saneamento básico que se encontram
                             em seu bairro. Discuta e compartilhe suas experiências não apenas
                             com moradores da redondeza, mas também com empresas e instituições

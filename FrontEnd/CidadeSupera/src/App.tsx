@@ -21,6 +21,13 @@ import store from './store/store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Perfil from './paginas/perfil/Perfil';
+import ListaPostagemUser from './components/postagens/listaPostagemUser/ListaPostagemUser';
+import MeusPosts from './paginas/meusPosts/MeusPosts';
+import Saude from './paginas/saude/Saude';
+import Educacao from './paginas/educacao/Educacao';
+import Saneamento from './paginas/saneamento/Saneamento';
+import Seguranca from './paginas/seguranca/Seguranca';
+import Mobilidade from './paginas/mobilidade/Mobilidade';
 
 function App() {
   
@@ -98,6 +105,34 @@ function App() {
 
           <Route path='/perfil'>
             <Perfil />
+          </Route>
+
+          <Route exact path='/listaPostagemUser'>
+            <ListaPostagemUser />
+          </Route>
+
+          <Route path='/meusPosts'>
+            <MeusPosts />
+          </Route>
+
+          <Route path='/temaSaude'>
+            <Saude />
+          </Route>
+
+          <Route path='/temaEducacao'>
+            <Educacao />
+          </Route>
+
+          <Route path='/temaSaneamento'>
+            <Saneamento />
+          </Route>
+
+          <Route path='/temaSeguranca'>
+            <Seguranca />
+          </Route>
+
+          <Route path='/temaMobilidade'>
+            <Mobilidade />
           </Route>
 
         </Switch>

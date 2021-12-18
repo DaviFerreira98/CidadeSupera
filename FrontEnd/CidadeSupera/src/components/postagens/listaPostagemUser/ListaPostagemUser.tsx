@@ -10,8 +10,9 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import MessageIcon from '@material-ui/icons/Message';
+import './ListaPostagemUser.css'
 
-function ListaPostagem() {
+function ListaPostagemUser() {
 
     let history = useHistory();
     const [posts, setPosts] = useState<Postagem[]>([])
@@ -76,12 +77,12 @@ function ListaPostagem() {
         <>
             {
                 listaPost.map(post => (
-                    <Card className='card' >
+                    <Card className='cardLista' >
 
                         <CardHeader
                             avatar={
                                 <Avatar aria-label="">
-                                    <img src={post.usuario?.fotoPerfil} alt="" />
+                                    <img src={post.usuario?.fotoPerfil} alt="" className='fotoPerfil' />
                                 </Avatar>
                             }
                             action={
@@ -160,4 +161,4 @@ function ListaPostagem() {
     )
 }
 
-export default ListaPostagem;
+export default ListaPostagemUser;

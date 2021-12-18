@@ -1,15 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import { Box, Button, Card, CardContent, Grid, Typography } from '@material-ui/core'
-import { shadows } from '@mui/system';
 import './Perfil.css'
 import InfoIcon from '@mui/icons-material/Info';
-import { Link } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
+import User from '../../models/User'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../store/tokens/tokensReducer'
+import { toast } from 'react-toastify'
+import {buscaId} from '../../services/Service'
 
 function Perfil() {
-
+    let history = useHistory();
+    const [user, setUser] = useState<User[]>([]);
+    const { idUser } = useParams<{ idUser: string }>();
+    const token = useSelector<TokenState,TokenState["tokens"]>((state)=>state.tokens);
     const [value, setValue] = React.useState(0);
+
+    useEffect(() => {
+        if (token == "") {
+            toast.info('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            })
+            history.push("/login")
+
+        }
+    }, [token])
+
+    
+    
+    async function findById(id: string){
+        buscaId('/usuarios/${id}',setUser,{
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    
 
     return (
         <div>
@@ -36,7 +72,7 @@ function Perfil() {
                     <CardContent>
                         <Typography variant="h5" color="initial">Nome do Usuário</Typography>
                         <Typography variant="body2" component="p">
-                            Sobre mim
+                            Sobre mim: 
                         </Typography>
                     </CardContent>
                 </Card>

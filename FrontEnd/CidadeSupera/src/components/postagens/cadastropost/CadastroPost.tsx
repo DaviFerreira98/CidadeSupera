@@ -9,6 +9,10 @@ import './CadastroPost.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 function CadastroPost() {
@@ -35,14 +39,14 @@ function CadastroPost() {
         }
     }, [token])
 
-    const[user, setUser] = useState<User>(
+    const [user, setUser] = useState<User>(
         {
             id: idUser,
             nome: '',
             usuario: '',
-            senha: ''
-
-    })
+            senha: '',
+            fotoPerfil: ''
+        })
 
     const [tema, setTema] = useState<Tema>(
         {
@@ -154,35 +158,47 @@ function CadastroPost() {
     return (
 
         <Grid container direction="row" justifyContent="center" alignItems="center" >
-            <Grid item xs={6} justifyContent="center">
-                <Box paddingBottom={7} paddingTop={3} paddingX={5} >
-                    <form onSubmit={onSubmit}>
-                        <Typography variant="h5" color="textSecondary" component="h1" align="center" >Faça uma publicação!</Typography>
-                        <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="standard" name="titulo" margin="normal" fullWidth />
-                        <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="standard" margin="normal" fullWidth />
-                        < TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="url: foto" name="foto" variant="standard" margin="normal" fullWidth />
-                        <TextField value={postagem.localizacao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="local" label="Localidade" name="localizacao" variant="standard" margin="normal" />
-                        <FormControl className='padding' >
-                            <InputLabel id="demo-simple-select-helper-label" >Tema </InputLabel>
-                            <Select
-                                labelId="demo-simple-select-helper-label"
-                                id="demo-simple-select-helper"
-                                onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-                                    headers: {
-                                        'Authorization': token
+            <Grid item xs={6} >
+                <Box paddingBottom={7} paddingTop={3}  >
+                    <form onSubmit={onSubmit} >
+                        <Accordion className='cardPubli'>
+                            <AccordionSummary
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                                className='cardPubli padding'
+                            >
+                                <Typography variant="h5" color="textSecondary" component="h1" align="center" >Faça uma publicação!</Typography>
+                            </AccordionSummary>
+                            <Box paddingLeft={2} paddingRight={2} >
+                                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título" variant="standard" name="titulo" margin="normal" fullWidth />
+                                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="standard" margin="normal" fullWidth />
+                                < TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="url: foto" name="foto" variant="standard" margin="normal" fullWidth />
+                                <TextField value={postagem.localizacao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="local" label="Localidade" name="localizacao" variant="standard" margin="normal" />
+                                <FormControl className='paddingTema' >
+                                <InputLabel id="demo-simple-select-helper-label" >Tema </InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    id="demo-simple-select-helper"
+                                    onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                                        headers: {
+                                            'Authorization': token
+                                        }
+                                    })}>
+                                    {
+                                        temas.map(tema => (
+                                            <MenuItem value={tema.id}>{tema.categoria}</MenuItem>
+                                        ))
                                     }
-                                })}>
-                                {
-                                    temas.map(tema => (
-                                        <MenuItem value={tema.id}>{tema.categoria}</MenuItem>
-                                    ))
-                                }
-                            </Select>
-                            <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                            <Button type="submit" variant="contained" className="botaoFinal">
+                                </Select>
+                            </FormControl>
+                            <FormHelperText className='alinharPost'>Escolha um tema para a postagem</FormHelperText>
+                            <Button type="submit" variant="contained" className="botaoPostar">
                                 Postar
                             </Button>
-                        </FormControl>
+                            </Box>                    
+                            <AccordionDetails>
+                            </AccordionDetails>
+                        </Accordion>
                     </form>
                 </Box>
             </Grid>

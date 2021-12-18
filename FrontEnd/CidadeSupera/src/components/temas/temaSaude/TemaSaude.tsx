@@ -4,7 +4,7 @@ import { busca } from '../../../services/Service';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import MessageIcon from '@material-ui/icons/Message';
-import './PostCard.css'
+import './TemaSaude.css'
 import Postagem from '../../../models/Postagem';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -12,7 +12,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-function PostCard() {
+function TemaSaude() {
   const [posts, setPosts] = useState<Postagem[]>([])
   const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
   let history = useHistory();
@@ -62,20 +62,26 @@ function PostCard() {
     getPost()
 
   }, [posts.length])
+  
+  const listTema = posts.filter(function (ct,pos){
+    if(ct.tema?.id === 39){
+      return posts.indexOf(ct)===pos;
+    }
+  })
+
 
   return (
     <>
       {
-        posts.map(post => (
+        listTema.map(post => (
           <Card className='card' >
 
             <CardHeader
               avatar={
                 <Avatar aria-label="">
-                  <img src={post.usuario?.fotoPerfil} alt="" className='fotoPerfil' />
+                  <img src={post.usuario?.fotoPerfil} alt="" className='fotoPerfil'  />
                 </Avatar>
               }
-                
               title= { post.usuario?.nome}
               subheader={post.localizacao}
 
@@ -124,4 +130,4 @@ function PostCard() {
   )
 }
 
-export default PostCard;
+export default TemaSaude;

@@ -4,8 +4,8 @@ body {
 
 .img{
     position: cover;
-    width: 110vh;
-    height: 100vh;
+    width: 115vh;
+    height: 120vh;
 }
 .text-none{
     text-decoration: none;
@@ -23,4 +23,8 @@ body {
     background-color: #4578FF !important;
     color: white !important;
     margin-right: 4px !important;
+}
+
+.logoCidade {
+    width: 70% !important;
 }

@@ -1,22 +1,21 @@
-import { Box, Typography, Button, Card, CardHeader, Avatar, IconButton, Menu, MenuItem, CardContent, CardActions } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom';
-import Postagem from '../../../models/Postagem';
+import { CardHeader, CardContent, CardActions, Typography, Card, Avatar, IconButton, Box, Button, Menu, MenuItem } from '@material-ui/core'
 import { busca } from '../../../services/Service';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
+import MessageIcon from '@material-ui/icons/Message';
+import './TemaSaneamento.css';
+import Postagem from '../../../models/Postagem';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import BookmarkIcon from '@material-ui/icons/Bookmark';
-import MessageIcon from '@material-ui/icons/Message';
 
-function ListaPostagem() {
-
-    let history = useHistory();
+function TemaSaneamento() {
     const [posts, setPosts] = useState<Postagem[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
-    const id = useSelector<TokenState, TokenState["ids"]>((state) => state.ids);
+    let history = useHistory();
     const [toogle, setToogle] = useState(true)
     const [cor, setCor] = useState('#000000')
 
@@ -28,13 +27,14 @@ function ListaPostagem() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
     useEffect(() => {
         setCor((state) => toogle ? '#000000' : '#FF0064');
     }, [toogle]);
 
     useEffect(() => {
         if (token == "") {
-            toast.error('Você precisa estar logado', {
+            toast.info('Você precisa estar logado', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -63,54 +63,24 @@ function ListaPostagem() {
 
     }, [posts.length])
 
-    var botoes: string;
-    const listaPost = posts.filter(function (ele, pos) {
-        if (ele.usuario?.id === id) {
-            return posts.indexOf(ele) === pos;
+    const listTema = posts.filter(function (ct, pos) {
+        if (ct.tema?.id === 40) {
+            return posts.indexOf(ct) === pos;
         }
     })
 
-    listaPost.reverse();
 
     return (
         <>
             {
-                listaPost.map(post => (
+                listTema.map(post => (
                     <Card className='card' >
 
                         <CardHeader
                             avatar={
                                 <Avatar aria-label="">
-                                    <img src={post.usuario?.fotoPerfil} alt="" />
+                                    <img src={post.usuario?.fotoPerfil} alt="" className='fotoPerfil' />
                                 </Avatar>
-                            }
-                            action={
-                                <IconButton aria-label="Opções">
-                                    <Button
-                                        id="basic-button"
-                                        aria-controls="basic-menu"
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        <MoreVertIcon />
-                                    </Button>
-                                    <Menu
-                                        id="basic-menu"
-                                        anchorEl={anchorEl}
-                                        open={open}
-                                        onClose={handleClose}
-                                        MenuListProps={{
-                                            'aria-labelledby': 'basic-button',
-                                        }}
-                                    >
-                                        <MenuItem onClick={handleClose}>
-                                            <Link to={`/formularioPostagem/${post.id}`} className="menu-publi">Atualizar</Link></MenuItem>
-                                        <MenuItem onClick={handleClose}>
-                                            <Link to={`/deletarPostagem/${post.id}`} className="menu-publi">Deletar</Link></MenuItem>
-                                    </Menu>
-
-                                </IconButton>
                             }
                             title={post.usuario?.nome}
                             subheader={post.localizacao}
@@ -160,4 +130,4 @@ function ListaPostagem() {
     )
 }
 
-export default ListaPostagem;
+export default TemaSaneamento

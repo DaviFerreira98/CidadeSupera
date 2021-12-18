@@ -1,16 +1,10 @@
-.card{
+.cardLista {
     margin-bottom: 16px;
     justify-content: center!important;
     width: 50% !important;
 }
 
-.size {
-    max-height: 100% !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
-}
-
-.fotoPerfil {
+.sizeLista {
     max-height: 100% !important;
     max-width: 100% !important;
     object-fit: cover !important;
@@ -19,4 +13,10 @@
 .menu-publi{
     text-decoration: none;
     color: black;
+}
+
+.fotoPerfil {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
 }

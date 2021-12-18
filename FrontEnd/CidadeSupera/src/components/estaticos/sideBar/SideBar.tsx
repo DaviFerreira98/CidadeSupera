@@ -38,34 +38,52 @@ function SideBar() {
                     <img src="https://i.imgur.com/9OXbFlu.png" alt="logo Cidade Supera" className='logoSideBar' />
                     </Box>
                     
-                    <Box mx={1} className='cursor margin' paddingTop={2}>
-                        <Link to='/home' className="text-decorator-none">
-                            <Typography variant="h6" className='margin'>
-                                Home
+                    <Box mx={1} className='cursor' paddingTop={2} >
+                        <Link to='/feed' className="text-decorator-none">
+                            <Typography variant="h6" color="inherit" className='margin'>
+                                Feed
                             </Typography>
                         </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
-                        <Link to='/perfil' className="text-decorator-none">
+                        <Link to='/meusPosts' className="text-decorator-none" >
                             <Typography variant="h6" color="inherit" className='margin'>
-                                Perfil
+                                Meus Posts
                             </Typography>
                         </Link>
                     </Box>
+
                     <Box mx={1} className='cursor'>
-                        <Link to='/temas' className="text-decorator-none">
-                            <Typography variant="h6" color="inherit" className='margin'>
-                                Temas
-                            </Typography>
-                        </Link>
+                        <Typography variant="h6" color="inherit" className='margin'> Temas </Typography>
+                        <Box paddingLeft={3} >
+                            <Link to='/temaSaude' className="text-decorator-none">
+                                <Typography variant="h6" color="inherit" className='marginTema'>
+                                    Saúde
+                                </Typography>
+                            </Link>
+                            <Link to='/temaEducacao' className="text-decorator-none">
+                                <Typography variant="h6" color="inherit" className='marginTema'>
+                                    Educação
+                                </Typography>
+                            </Link>
+                            <Link to='/temaSaneamento' className="text-decorator-none">
+                                <Typography variant="h6" color="inherit" className='marginTema'>
+                                    Saneamento Básico
+                                </Typography>
+                            </Link>
+                            <Link to='/temaSeguranca' className="text-decorator-none ">
+                                <Typography variant="h6" color="inherit" className='marginTema'>
+                                    Segurança
+                                </Typography>
+                            </Link>
+                            <Link to='/temaMobilidade' className="text-decorator-none">
+                                <Typography variant="h6" color="inherit" className='marginTema'>
+                                    Mobilidade
+                                </Typography>
+                            </Link>
+                        </Box>
                     </Box>
-                    <Box mx={1} className='cursor'>
-                        <Link to='/listaPostagem' className="text-decorator-none">
-                            <Typography variant="h6" color="inherit" className='margin'>
-                                Deletar Post
-                            </Typography>
-                        </Link>
-                    </Box>
+
                     <Box mx={1} className='cursor margin'>
                         <Typography variant="h6" color="inherit" className='margin' onClick={() => logout()}>
                             Logout

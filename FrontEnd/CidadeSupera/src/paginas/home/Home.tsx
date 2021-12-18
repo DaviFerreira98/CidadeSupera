@@ -40,7 +40,7 @@ function Home() {
                     </Box>
                     <Box paddingX={12} paddingTop={16}>
 
-                        <Link to="/login" className="text-decorator-none">
+                        <Link to="/cadastroUsuario" className="text-decorator-none">
                             <Button variant="outlined" className="botao titulo botao-hover" >
                                 Cadastre-se agora
                             </Button>
