@@ -1,9 +1,10 @@
 import React from "react";
 import "./Home.css";
-import ReactPlayer from 'react-player'
+import ReactPlayer from "react-player";
 import { Grid, Box, Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import {motion, AnimatePresence} from 'framer-motion'
+import Equipe from "../equipe/Equipe";
+import Sobre from "../sobre/Sobre";
 
 function Home() {
     return (
@@ -16,48 +17,45 @@ function Home() {
                 className="home"
             >
                 <Grid alignItems="center" item xs={6} justifyContent="center">
-                    <Box paddingX={18} paddingTop={10}>
-                        <Typography
-                            variant="h3"
-                            gutterBottom
-                            color="textPrimary"
-                            component="h3"
-                            align="center"
-                            className="texto-home"
-                        >
-                            Seja Bem-Vinde ao Cidade Supera!
-                        </Typography>
+                    <Box paddingX={12} paddingTop={12}>
                         <Typography
                             variant="h5"
                             gutterBottom
-                            color="textPrimary"
                             component="h5"
-                            align="center"
-                            className="texto-home"
+                            margin-right="auto"
+                            className="texto-titulo"
+                        >
+                            Bem vinde ao Cidade Supera!
+                        </Typography>
+                        <Typography
+                            variant="h4"
+                            gutterBottom
+                            color="textPrimary"
+                            component="h4"
+                            margin-right="auto"
+                            className="texto-titulo1"
                         >
                             Construindo um futuro melhor hoje!
                         </Typography>
                     </Box>
-                    <Box display="flex" justifyContent="center">
-                        <Link to="/sobre" className="text-decorator-none">
-                            <Button variant="outlined" className="botao">
-                                Saiba mais
-                            </Button>
-                        </Link>
+                    <Box paddingX={12} paddingTop={16}>
+
                         <Link to="/login" className="text-decorator-none">
-                            <Button variant="outlined" className="botao">
-                                Logue-se
+                            <Button variant="outlined" className="botao titulo botao-hover" >
+                                Cadastre-se agora
                             </Button>
                         </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={6} alignItems="center" justifyContent="center">
-                    <Box paddingTop={10}>
-                        <img
-                            src="https://i.imgur.com/H4QDZL3.jpg"
-                            alt=""
-                            className="img-home"
-                        />
+                    <Box paddingTop={10} >
+                        <ReactPlayer
+                            className="react-player"
+                            playing={true}
+                            loop={true}
+                            muted={true}
+                            url="https://www.youtube.com/watch?v=l7ZW7Y_eumQ"
+                        ></ReactPlayer>
                     </Box>
                 </Grid>
                 {/*Abaixo depois da palhaçada*/}
@@ -71,17 +69,11 @@ function Home() {
                     >
                         {/*Player do vídeo, nao mexer sua vagabunda*/}
 
-                        <ReactPlayer
-                            className='react-player'
-                            playing={true}
-                            loop={true}
-                            muted={true}
-                            url="https://www.youtube.com/embed/vq5NvJvr55Q">
-                        </ReactPlayer>
                     </Box>
-
-
                 </Grid>
+                {/* Equipe*/}
+                <Sobre />
+                <Equipe />
                 {/*Não escreva nada abaixo*/}
             </Grid>
         </>
