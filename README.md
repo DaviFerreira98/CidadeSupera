@@ -11,10 +11,8 @@ Este projeto tem como objetivo colocar em prática os conhecimentos de backend e
 
 ### :bust_in_silhouette: Integrantes
 ---
-* [Caio Andrade](https://www.linkedin.com/in/caio-barbosa-andrade-3bb798200?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbGBLE2qzSEaHbKGMzupDdw%3D%3D)
 * [Davi Ferreira](https://www.linkedin.com/in/davi-ferreira-da-silva-8561b6125/)
 * [Juliana Macedo](https://www.linkedin.com/in/juliana-cs-macedo/)
-* [Larissa Alvarenga](https://www.linkedin.com/in/larissaalvarengadelima/)
 * [Lucas Figueiredo](https://www.linkedin.com/in/lucazfigueiredo/)
 
 
