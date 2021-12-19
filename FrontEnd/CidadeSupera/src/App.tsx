@@ -28,6 +28,7 @@ import Educacao from './paginas/educacao/Educacao';
 import Saneamento from './paginas/saneamento/Saneamento';
 import Seguranca from './paginas/seguranca/Seguranca';
 import Mobilidade from './paginas/mobilidade/Mobilidade';
+import SobreNos from './paginas/sobrenos/SobreNos';
 
 function App() {
   
@@ -133,6 +134,10 @@ function App() {
 
           <Route path='/temaMobilidade'>
             <Mobilidade />
+          </Route>
+
+          <Route path='/sobreNos'>
+            <SobreNos/>
           </Route>
 
         </Switch>

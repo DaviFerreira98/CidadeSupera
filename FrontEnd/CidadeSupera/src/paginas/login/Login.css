@@ -9,7 +9,7 @@
 
 .cardLogin {
     background: white;
-    width: 80vh !important;
+    width: 60vh !important;
     height: 60vh !important;
     border-radius: 20px;
 }
@@ -27,6 +27,7 @@
 .textoLogin {
     color: rgba(31, 25, 25, 0.815);
     font-weight: bold !important;
+    text-align: center !important;
 }
 
 .padding {

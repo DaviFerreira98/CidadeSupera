@@ -57,40 +57,40 @@ function Navbar() {
                 <Box mx={1}>
                     <img src="https://i.imgur.com/x1m8CnY.png" alt="logo" className="logo" />
                 </Box>
-                <Box className='cursor' style={{ flexGrow: 1 }} >
+                <Box style={{ flexGrow: 1 }} >
                     <Link to='/home' className="text-decorator-none">
-                        <Typography variant="h5" color="inherit" >
+                        <h2>
                             Cidade Supera
-                        </Typography>
+                        </ h2>
                     </Link>
                 </Box>
                 <Box display="flex">
                     <Box mx={1} className='cursor'>
                         <Link to='/home' className="text-decorator-none">
-                            <Typography variant="h6" color="inherit">
+                            <h3>
                                 Home
-                            </Typography>
+                            </h3>
                         </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
                         <Link to='/sobre' className="text-decorator-none">
-                            <Typography variant="h6" color="inherit">
+                            <h3>
                                 Sobre
-                            </Typography>
+                            </h3>
                         </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
                         <Link to='/equipe' className="text-decorator-none">
-                            <Typography variant="h6" color="inherit">
+                            <h3>
                                 Equipe
-                            </Typography>
+                            </ h3>
                         </Link>
                     </Box>
                     <Box mx={1} className='cursor'>
                         <Link to='/login' className='text-decorator-none'>
-                            <Typography variant="h6" color="inherit">
+                            <h3>
                                 Entrar
-                            </Typography>
+                            </h3>
                         </Link>
                     </Box>
                 </Box>

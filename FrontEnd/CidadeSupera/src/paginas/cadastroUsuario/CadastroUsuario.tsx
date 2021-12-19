@@ -6,6 +6,7 @@ import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { toast } from 'react-toastify';
+import { Http2ServerRequest } from 'http2';
 
 function CadastroUsuario() {
     let history = useHistory();
@@ -77,46 +78,54 @@ function CadastroUsuario() {
     }
 
     return (
-        <Grid container direction="row" justifyContent="center" alignItems="center">
-            <Grid item xs={6} className="img" alignItems="center">
-                <img src="https://i.imgur.com/H4QDZL3.jpg" alt="" className="img" />
-            </Grid>
-            <Grid item xs={6} alignItems="center">
-                <Box paddingX={10}>
-                    <Box textAlign="center">
-                        <img src="https://i.imgur.com/5a8OKB0.png" alt="logo Cidade Supera" className='logoCidade' />
-                    </Box>
-                    <Box marginTop={2} textAlign='center'>
-                        <form onSubmit={onSubmit}>
-                            <Typography variant='h5' gutterBottom color='textPrimary' component='h3' align='left'>Informações básicas</Typography>
-                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='standard' name='nome' margin='normal' fullWidth />
-                            <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='standard' name='usuario' margin='normal' fullWidth />
-                            <TextField value={user.fotoPerfil} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='fotoPerfil' label='url: Foto Perfil' variant='standard' name='fotoPerfil' margin='normal' fullWidth />
-                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='standard' name='senha' margin='normal' type='password' fullWidth />
-                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='standard' name='confirmarSenha' margin='normal' type='password' fullWidth />
-                            <Box display='flex' justifyContent='center' marginTop={2} textAlign='center'>
-                                <Link to='/login' className='text-decorator-none'>
-                                    <Button variant='contained' className='btnCancelar'>
-                                        Cancelar
+        <Grid container className="background1" >
+            <Grid item xs={12} >
+                <Box display="flex" justifyContent="center" alignItems="center" height="80vh" style={{ opacity: 1 }}>
+                    <Box className="cardCadastro" marginTop={12} paddingLeft={4} paddingRight={4} justifyContent="center" alignItems="center">
+                        <Box marginY={2}>
+                            <h1 className="textoCadastro">
+                                Cadastro
+                            </ h1>
+                            <form onSubmit={onSubmit}>
+                                <Box >
+                                    <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='standard' name='nome' margin='normal' fullWidth />
+                                </Box>
+                                <Box  >
+                                    <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='standard' name='usuario' margin='normal' fullWidth />
+                                </Box >
+                                <Box  >
+                                    <TextField value={user.fotoPerfil} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='fotoPerfil' label='url: Foto Perfil' variant='standard' name='fotoPerfil' margin='normal' fullWidth />
+                                </Box >
+                                <Box >
+                                    <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='standard' name='senha' margin='normal' type='password' fullWidth />
+                                </Box >
+                                <Box  >
+                                    <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='standard' name='confirmarSenha' margin='normal' type='password' fullWidth />
+                                </Box >
+                                <Box display='flex' justifyContent='center' marginTop={2} textAlign='center'>
+                                    <Link to='/login' className='text-decorator-none'>
+                                        <Button variant='contained' className='btnCancelar'>
+                                            Cancelar
+                                        </Button>
+                                    </Link>
+                                    <Button type='submit' variant='contained' className='botao1'>
+                                        Cadastrar
                                     </Button>
+                                </Box>
+                            </form>
+                            <Box display='flex' justifyContent='center' marginTop={2}>
+                                <Box marginRight={1}>
+                                    <Typography variant='subtitle1' gutterBottom align='center'>Já possui uma conta?</Typography>
+                                </Box>
+                                <Link to='/login' className='text-decorator-none'>
+                                    <Typography variant="subtitle1" gutterBottom align='center' className='txt' >Logue-se</Typography>
                                 </Link>
-                                <Button type='submit' variant='contained' className='botao1'>
-                                    Cadastrar
-                                </Button>
                             </Box>
-                        </form>
-                        <Box display='flex' justifyContent='center' marginTop={2}>
-                            <Box marginRight={1}>
-                                <Typography variant='subtitle1' gutterBottom align='center'>Já possui uma conta?</Typography>
-                            </Box>
-                            <Link to='/login' className='text-decorator-none'>
-                                <Typography variant="subtitle1" gutterBottom align='center' className='txt' >Logue-se</Typography>
-                            </Link>
                         </Box>
                     </Box>
                 </Box>
             </Grid>
-        </Grid>
+        </Grid >
     )
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { Typography, Box, Grid, withStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './Footer.css';
@@ -64,14 +65,8 @@ export const Footer = React.memo(function FooterDemo() {
                         <h3 className="txt-footer bold" >Redes Sociais</h3>
                     </Box>
                     <Box paddingBottom={2}>
-                        <a href="" target="_blank">
-                            <FacebookIcon style={{ fontSize: 40, color: "white" }} />
-                        </a>
-                        <a href="" target="_blank">
-                            <InstagramIcon style={{ fontSize: 40, color: "white" }} />
-                        </a>
-                        <a href="" target="_blank">
-                            <LinkedInIcon style={{ fontSize: 40, color: "white" }} />
+                        <a href="https://github.com/DaviFerreira98/CidadeSupera">
+                            <GitHubIcon style={{ fontSize: 40, color: "white" }} className='text-decorator-none2' />
                         </a>
                     </Box>
                 </Box>
@@ -89,13 +84,13 @@ export const Footer = React.memo(function FooterDemo() {
                 </Box>
             </Grid>
             <Grid item xs={4}>
-                <Box padding={4} >
+                <Box padding={4} paddingRight={4} >
                     <Box paddingBottom={2}>
                         <h3 className="txt-footer bold" >Notícias </ h3>
                         <Typography align='left' className='txt-footer' >Fique por dentro das atualizações da nossa rede social!</Typography>
                     </Box>
                     <Box paddingTop={1} >
-                        <TextField id="email" label="Email" className={styles.root} variant="outlined" name="email" ></TextField>
+                        <TextField id="email" label="Email" className={styles.root} variant="outlined" name="email"  fullWidth></TextField>
                     </Box>
                 </Box>
             </Grid>

@@ -41,7 +41,7 @@ function Home() {
                     <Box paddingX={12} paddingTop={16}>
 
                         <Link to="/cadastroUsuario" className="text-decorator-none">
-                            <Button variant="outlined" className="botao titulo botao-hover" >
+                            <Button variant="outlined" className="botaoHome titulo transitionSizeHome" >
                                 Cadastre-se agora
                             </Button>
                         </Link>

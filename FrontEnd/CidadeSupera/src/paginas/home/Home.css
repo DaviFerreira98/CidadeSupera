@@ -14,7 +14,7 @@
     font-weight: 800 !important;
 }
 
-.botao {
+.botaoHome {
     border-color: #ff0064 !important;
     background-color: white !important;
     border-width: 3px !important;
@@ -47,14 +47,23 @@
 
 }
 
-
 .fundo-rede {
     background-image: url("https://imgur.com/DUiYgdw") !important;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.botao-hover {
-    background-color: #ff0064;
-    color: #ff0064;
+.botaoHome:hover {
+    border-color: #ff0064 !important;
+    background-color: #ff0064 !important;
+    border-width: 3px !important;
+    color: white !important;
+}
+
+.transitionSizeHome {
+    transition: transform 0.5s;
+}
+
+.transitionSizeHome:hover {
+    transform: scale(1.1);
 }

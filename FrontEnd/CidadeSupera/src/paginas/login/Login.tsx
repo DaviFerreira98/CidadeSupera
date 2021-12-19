@@ -80,9 +80,9 @@ function Login() {
                 <Box display="flex" justifyContent="center" alignItems="center" height="80vh" style={{ opacity: 1 }}>
                     <Box className="cardLogin" marginTop={12} display="flex" justifyContent="center" alignItems="center">
                         <Box marginY={2}>
-                            <Typography variant="h5" align="center" className="textoLogin" >
+                            <h1 className="textoLogin" >
                                 Login
-                            </Typography>
+                            </h1>
                             <form onSubmit={onSubmit}>
                                 <Box marginY={4}>
                                     <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label="usuário" variant="outlined" name="usuario" fullWidth />
