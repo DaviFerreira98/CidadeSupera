@@ -3,28 +3,95 @@ import './Sobre.css';
 import { Grid, Box, Typography } from "@material-ui/core";
 
 function Sobre() {
-
     return (
         <>
-            {/* Nesta parte está somente a frase de destaque */}
-
             <Grid
                 container
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
             >
-                <Grid item xs={12}>
+                {/* Caixa de missão*/}
+                <Grid item xs={4} justifyContent="center">
                     <Box
-                        display="flex"
                         justifyContent="center"
                         alignItems="center"
-                        marginX="auto"
-                        marginTop={10}
+                        marginTop={20}
+                        marginLeft={10}
+                        className="corpo"
+                        paddingBottom={2}
+                        paddingTop={2}
                     >
-                        <Typography variant="h3" gutterBottom align="center">
-                            Publique, encare os problemas e SUPERE!
-                        </Typography>
+                        <Box justifyContent="center" alignItems="center" marginLeft={15}>
+                            <img src="https://i.imgur.com/vnSINbG.png" className="missao" />
+                        </Box>
+                        <Box justifyContent="center" alignItems="center">
+                            <Typography
+                                variant="h5"
+                                gutterBottom
+                                align="center"
+                                className="texto1"
+                            >
+                                Conectar pessoas interessadas a discutir sobre problemas sociais
+                                e aproximá-las com instituições públicas e privadas interessadas
+                                em engajar. E juntos encontraremos uma solução através do nosso
+                                website
+                            </Typography>
+                        </Box>
+                    </Box>
+                </Grid>
+                {/* Caixa de visão*/}
+                <Grid item xs={4} justifyContent="center">
+                    <Box
+                        justifyContent="center"
+                        alignItems="center"
+                        marginTop={20}
+                        marginLeft={5}
+                        marginRight={5}
+                        className="corpo1"
+                        paddingBottom={2}
+                        paddingTop={2}
+                    >
+                        <Box justifyContent="center" alignItems="center" marginLeft={18}>
+                            <img src="https://i.imgur.com/LZJnJiJ.png" className="missao" />
+                        </Box>
+                        <Box justifyContent="center" alignItems="center">
+                            <p className="texto4">Colaboração</p>
+                            <p className="texto4">Resiliência</p>
+                            <p className="texto4">Agilidade</p>
+                            <p className="texto4">Ética</p>
+                            <p className="texto4">Conhecimento</p>
+                            
+                        </Box>
+                        
+                    </Box>
+                </Grid>
+                {/* Caixa de valores*/}
+
+                <Grid item xs={4} justifyContent="center">
+                    <Box
+                        justifyContent="center"
+                        alignItems="center"
+                        marginTop={20}
+                        marginRight={10}
+                        className="corpo2"
+                        paddingBottom={2}
+                        paddingTop={2}
+                    >
+                        <Box justifyContent="center" alignItems="center" marginLeft={15}>
+                            <img src="https://i.imgur.com/iO2tcCD.png" className="missao" />
+                        </Box>
+                        <Box justifyContent="center" alignItems="center">
+                            <Typography
+                                variant="h5"
+                                gutterBottom
+                                align="center"
+                                className="texto1"
+                            >
+                                Aspiramos nos tornar uma plataforma de auxílio as entidades publicas e privadas interessadas a soluncionar as demandas sociais de forma mais eficiente e responsivas
+                            </Typography>
+                        </Box>
+                        
                     </Box>
                 </Grid>
 
@@ -36,25 +103,35 @@ function Sobre() {
                         justifyContent="center"
                         alignItems="center"
                         marginX="auto"
-                        marginTop={40}
+                        marginTop={20}
                         marginLeft={20}
                     >
-                        <Typography variant="h4" color="initial" align="center">
+                        <Typography
+                            variant="h4"
+                            color="initial"
+                            align="center"
+                            className="texto1"
+                        >
                             Cidade Supera
-                            <Typography variant="h5" color="initial" align="center" >
-                                É o seu espaço de reclamação e sugestão de
-                                melhoria para a sua cidade. Sua manifestação poderá causar impacto
-                                na sua comunidade, superando os problemas e atingindo melhorias
-                                sociais e estruturais
+                            <Typography
+                                variant="h5"
+                                color="initial"
+                                align="center"
+                                className="texto1"
+                            >
+                                É o seu espaço de reclamação e sugestão de melhoria para a sua
+                                cidade. Sua manifestação poderá causar impacto na sua
+                                comunidade, superando os problemas e atingindo melhorias sociais
+                                estruturais e sociais
                             </Typography>
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={6}>
-                    <Box marginTop={30}>
+                    <Box marginTop={20}>
                         <img
-                            src="https://i.imgur.com/0t3rg8z.png"
+                            src="https://i.imgur.com/7SMqaea.png"
                             alt=""
                             width="500px"
                             height="500px"
@@ -83,9 +160,10 @@ function Sobre() {
                         marginX="auto"
                         marginTop={25}
                         marginRight={20}
+                        paddingBottom={10}
                     >
                         <Typography variant="h5" align="center" className="texto1">
-                            Publique os problemas enfrentados: infraestrutura, segurança,
+                            Publique os problemas enfrentados infraestrutura, segurança,
                             mobilidade, educação, saúde e saneamento básico que se encontram
                             em seu bairro. Discuta e compartilhe suas experiências não apenas
                             com moradores da redondeza, mas também com empresas e instituições
@@ -104,4 +182,3 @@ function Sobre() {
 }
 
 export default Sobre;
-

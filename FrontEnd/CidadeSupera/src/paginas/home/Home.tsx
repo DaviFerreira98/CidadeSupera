@@ -54,23 +54,12 @@ function Home() {
                             playing={true}
                             loop={true}
                             muted={true}
-                            url="https://www.youtube.com/watch?v=l7ZW7Y_eumQ"
+                            url="https://www.youtube.com/watch?v=-Gx5FrI5Svs"
                         ></ReactPlayer>
                     </Box>
                 </Grid>
                 {/*Abaixo depois da palhaçada*/}
-                <Grid item xs={12}>
-                    <Box
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center"
-                        height="80vh"
-                        paddingTop={10}
-                    >
-                        {/*Player do vídeo, nao mexer sua vagabunda*/}
 
-                    </Box>
-                </Grid>
                 {/* Equipe*/}
                 <Sobre />
                 <Equipe />

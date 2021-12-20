@@ -24,11 +24,7 @@ function SobreNos() {
                             <Box maxWidth='250px' paddingTop={2}  >
                                 <h2 className='txtSobre' >Davi Ferreira</h2>
                                 <Typography variant="body2" color="initial" className='textoTime' >
-                                    Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos,
-                                    e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos
-                                    e os embaralhou para fazer um livro de modelos de tipos.
-                                    Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica,
-                                    permanecendo essencialmente inalterado
+                                    Desde de a infância apaixonado por tecnologia e em foco programação, pois criar algo assim é incrível então com muita curiosidade fui buscando saber cada vez mais sobre essa área onde me descobri e percebi que não só criar mas analisar e principalmente resolver problemas são coisas que mais amo.
                                 </Typography>
                                 <Box className='redeSocial' paddingBottom={10} paddingTop={2} >
                                     <a href="https://github.com/DaviFerreira98" target="_blank">
@@ -80,11 +76,7 @@ function SobreNos() {
                             <Box maxWidth='250px' paddingTop={2} >
                                 <h2 className='txtSobre'>Lucas Figueiredo</h2>
                                 <Typography variant="body2" color="initial" className='textoTime' >
-                                    Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos,
-                                    e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos
-                                    e os embaralhou para fazer um livro de modelos de tipos.
-                                    Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica,
-                                    permanecendo essencialmente inalterado
+                                Adoro assistir animes, jogar vídeo-games, escrever historias e ler sobre Não-ficção, Ficção e Filosofia nas horas vagas. Desisti da carreira de secretariado porque notei que aprender a codar era algo natural e apaixonante, hoje apaixonado por tecnologia só penso aprimorar minhas habilidades.
                                 </Typography>
                                 <Box className='redeSocial' paddingBottom={10} paddingTop={2} >
                                     <a href="https://github.com/DomLucaz" target="_blank">
