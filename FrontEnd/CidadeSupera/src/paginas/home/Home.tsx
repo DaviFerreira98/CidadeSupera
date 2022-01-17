@@ -16,7 +16,7 @@ function Home() {
                 alignItems="center"
                 className="home"
             >
-                <Grid alignItems="center" item xs={6} justifyContent="center">
+                <Grid alignItems="center" item xs={12} md={6} justifyContent="center">
                     <Box paddingX={12} paddingTop={12}>
                         <Typography
                             variant="h5"
