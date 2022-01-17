@@ -5,7 +5,7 @@
 }
 
 .img-container {
-    width: 40vh;
+    max-width: 40vh;
     min-height: 30vh;
     border-radius: 50%;
 }

@@ -1,12 +1,7 @@
 import React from 'react'
 import './Equipe.css';
-import { Grid, Box, Button, Typography } from '@material-ui/core';
+import { Grid, Box, Button} from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-
 
 function Equipe() {
 
@@ -19,19 +14,21 @@ function Equipe() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={4} >
+                <Grid item xs={12} md={4} >
                     <Grid justifyContent="center" >
-                        <Box paddingTop={2} paddingLeft={10} paddingBottom={5} >
+                        <Box paddingTop={2} paddingLeft={10} paddingBottom={5} justifyContent="center"
+                        alignItems="center"  >
                             <img src="https://avatars.githubusercontent.com/u/76879747?s=400&u=55376ef8af47bb09a94b07b3e8560ee3f8fdda05&v=4" id='Davi' alt="" className="img-container" />
 
-                            <Box maxWidth='250px' paddingTop={2}  >
+                            <Box maxWidth='250px' paddingTop={2} justifyContent="center"
+                        alignItems="center" >
                                 <h2 className='txtSobre' >Davi Ferreira</h2>
                             </Box>
                         </Box>
                     </Grid>
                 </Grid>
 
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                     <Grid justifyContent="center" >
                         <Box paddingTop={2} paddingLeft={10} paddingBottom={5} >
                             <img src="https://avatars.githubusercontent.com/u/87380408?v=4" id='Ju' alt="" className="img-container mexer" />
@@ -42,7 +39,7 @@ function Equipe() {
                     </Grid>
                 </Grid>
 
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                     <Grid justifyContent="center">
                         <Box paddingTop={2} paddingLeft={10} paddingBottom={5}>
                             <img src="https://avatars.githubusercontent.com/u/91294318?v=4" id='Lucas' alt="" className="img-container" />

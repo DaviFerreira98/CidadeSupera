@@ -9,8 +9,8 @@
 
 .cardLogin {
     background: white;
-    width: 60vh !important;
-    height: 60vh !important;
+    min-width: 60vh !important;
+    min-height: 60vh !important;
     border-radius: 20px;
 }
 
@@ -20,7 +20,7 @@
     color: white !important;
 }
 
-.txt{
+.txt {
     color: #FF0064 !important;
 }
 

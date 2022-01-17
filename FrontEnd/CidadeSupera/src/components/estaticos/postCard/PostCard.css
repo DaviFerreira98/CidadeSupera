@@ -1,7 +1,8 @@
-.card{
+.card {
     margin-bottom: 16px;
     justify-content: center!important;
-    width: 50% !important;
+    min-width: 50% !important;
+    align-items: center !important;
 }
 
 .size {
@@ -16,7 +17,7 @@
     object-fit: cover !important;
 }
 
-.menu-publi{
+.menu-publi {
     text-decoration: none;
     color: black;
 }

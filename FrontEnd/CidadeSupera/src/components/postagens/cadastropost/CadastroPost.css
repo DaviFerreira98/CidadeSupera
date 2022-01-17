@@ -11,24 +11,25 @@
     object-fit: contain !important;
 }
 
-.root{
+.root {
     border: 1px solid #DDD;
     border-radius: 5%;
 }
-.select{
+
+.select {
     width: 60px;
 }
 
-.tamanho{
+.tamanho {
     width: 60px;
 }
 
-.btn{
+.btn {
     margin-right: 16px;
 }
 
-.cardPubli{
-    width: 108vh;
+.cardPubli {
+    min-width: 50% !important;
     padding-left: -10px !important;
     align-items: center;
 }

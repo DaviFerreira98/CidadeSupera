@@ -6,11 +6,10 @@ import BookmarkIcon from '@material-ui/icons/Bookmark';
 import MessageIcon from '@material-ui/icons/Message';
 import './PostCard.css'
 import Postagem from '../../../models/Postagem';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 function PostCard() {
   const [posts, setPosts] = useState<Postagem[]>([])

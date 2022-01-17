@@ -12,7 +12,7 @@ function Sobre() {
                 alignItems="center"
             >
                 {/* Caixa de missão*/}
-                <Grid item xs={4} justifyContent="center">
+                <Grid item xs={12} md={4} justifyContent="center">
                     <Box
                         justifyContent="center"
                         alignItems="center"
@@ -41,7 +41,7 @@ function Sobre() {
                     </Box>
                 </Grid>
                 {/* Caixa de visão*/}
-                <Grid item xs={4} justifyContent="center">
+                <Grid item xs={12} md={4} justifyContent="center">
                     <Box
                         justifyContent="center"
                         alignItems="center"
@@ -68,7 +68,7 @@ function Sobre() {
                 </Grid>
                 {/* Caixa de valores*/}
 
-                <Grid item xs={4} justifyContent="center">
+                <Grid item xs={12} md={4} justifyContent="center">
                     <Box
                         justifyContent="center"
                         alignItems="center"
@@ -97,7 +97,7 @@ function Sobre() {
 
                 {/* Nesta parte inicia as informações complementares*/}
 
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                     <Box
                         display="flex"
                         justifyContent="center"
@@ -128,7 +128,7 @@ function Sobre() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                     <Box marginTop={20}>
                         <img
                             src="https://i.imgur.com/7SMqaea.png"
@@ -141,7 +141,7 @@ function Sobre() {
 
                 {/* Nesta parte inicia a segunda box relacionada ao segundo comentário*/}
 
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                     <Box marginLeft={20}>
                         <img
                             src="https://i.imgur.com/0t3rg8z.png"
@@ -152,7 +152,7 @@ function Sobre() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                     <Box
                         display="flex"
                         justifyContent="center"

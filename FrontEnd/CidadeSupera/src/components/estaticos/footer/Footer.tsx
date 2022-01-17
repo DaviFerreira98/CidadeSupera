@@ -1,7 +1,4 @@
 import React from 'react';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Typography, Box, Grid, withStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
@@ -47,14 +44,14 @@ const useStyles = makeStyles({
 export const Footer = React.memo(function FooterDemo() {
 
     const styles = useStyles();
-    const token = useSelector < TokenState, TokenState["tokens"]>(
-        (state) => state.tokens );
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens);
 
     var footerComponent;
 
-    if (token == "") {
+    if (token === "") {
         footerComponent = <Grid container id="Rodape">
-            <Grid item xs={4}>
+            <Grid item xs={6} md={4}>
                 <Box padding={4}>
                     <Box paddingBottom={1}>
                         <h3 className="txt-footer bold" >Cidade Supera</h3>
@@ -71,7 +68,7 @@ export const Footer = React.memo(function FooterDemo() {
                     </Box>
                 </Box>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6} md={4}>
                 <Box padding={4} marginLeft={15}>
                     <Box paddingBottom={2}>
                         <h3 className="txt-footer bold">Empresa</h3>
@@ -83,16 +80,21 @@ export const Footer = React.memo(function FooterDemo() {
                     </Box>
                 </Box>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6} md={4}>
                 <Box padding={4} paddingRight={4} >
                     <Box paddingBottom={2}>
                         <h3 className="txt-footer bold" >Notícias </ h3>
                         <Typography align='left' className='txt-footer' >Fique por dentro das atualizações da nossa rede social!</Typography>
                     </Box>
                     <Box paddingTop={1} >
-                        <TextField id="email" label="Email" className={styles.root} variant="outlined" name="email"  fullWidth></TextField>
+                        <TextField id="email" label="Email" className={styles.root} variant="outlined" name="email" fullWidth></TextField>
                     </Box>
                 </Box>
+            </Grid>
+            <Grid item xs={12}>
+                <a target="_blank" rel="noreferrer" href="https://brasil.generation.org" className='text-decorator-none'>
+                    <Typography variant="subtitle2" className="txt-footer" align='center' >Todos os direitos reservados © 2021 Copyright: brasil.generation.org</Typography>
+                </a>
             </Grid>
         </Grid>
     }

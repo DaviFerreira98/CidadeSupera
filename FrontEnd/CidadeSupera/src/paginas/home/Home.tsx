@@ -47,7 +47,7 @@ function Home() {
                         </Link>
                     </Box>
                 </Grid>
-                <Grid item xs={6} alignItems="center" justifyContent="center">
+                <Grid item xs={12} md={6} alignItems="center" justifyContent="center">
                     <Box paddingTop={10} >
                         <ReactPlayer
                             className="react-player"
