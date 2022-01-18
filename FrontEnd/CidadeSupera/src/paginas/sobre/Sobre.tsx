@@ -133,8 +133,8 @@ function Sobre() {
                         <img
                             src="https://i.imgur.com/7SMqaea.png"
                             alt=""
-                            width="500px"
-                            height="500px"
+                            width="500vw"
+                            height="500vh"
                         />
                     </Box>
                 </Grid>
@@ -146,8 +146,8 @@ function Sobre() {
                         <img
                             src="https://i.imgur.com/0t3rg8z.png"
                             alt=""
-                            width="500px"
-                            height="500px"
+                            width="500vmax"
+                            height="500vmin"
                         />
                     </Box>
                 </Grid>
